@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-main: #ffffff; 
+    --accent-blue: #01458C;
+    --accent-red: #D6191D;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(1, 69, 140, 0.03) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(214, 25, 29, 0.02) 0px, transparent 50%);
+    color: #0f172a;
+    margin: 0;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+}
+
+.text-content-small {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.heading-accent {
+    font-style: italic;
+    font-family: serif; /* Or a specific elegant font if available */
+    color: var(--accent-blue);
+    font-weight: 400;
+}
+
+.card-ultra-rounded {
+    border-radius: 4rem;
+    padding: 3rem;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.5s ease;
+}
+
+.card-ultra-rounded:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Glassmorphism utility */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass:hover {
+    border-color: rgba(1, 69, 140, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Gradients */
+.hero-glow {
+    background: radial-gradient(circle at 50% -20%, rgba(1, 69, 140, 0.08) 0%, #ffffff 80%);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #01458C 0%, #D6191D 50%, #01458C 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 5s linear infinite;
+    text-shadow: 0 10px 20px rgba(1, 69, 140, 0.1);
+}
+
+.text-gradient-red {
+    background: linear-gradient(to right, #D6191D, #ff4d4d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+    background: linear-gradient(to right, #01458C, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism for Product Cards */
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(1, 69, 140, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(4px);
+}
+
+.image-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.overlay span {
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+/* Service Card Glow */
+.services .card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 10px 40px rgba(1, 69, 140, 0.2) !important;
+}
+
+.page-title {
+    position: relative;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.page-title::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 7, 10, 0.7);
+}
+
+.page-title .container {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.float-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    to { background-position: 200% center; }
+}
+
+/* Nav link active state */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-red);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--accent-red) !important;
+}
+
+/* More Design Elements */
+.design-shape {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    filter: blur(1px);
+    z-index: -1;
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+.glow-card {
+    position: relative;
+}
+
+.glow-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, var(--accent-blue), var(--accent-red), var(--accent-blue));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    filter: blur(8px);
+}
+
+.glow-card:hover::before {
+    opacity: 0.5;
+}
+
+/* Global Tailwind Color Overrides to Brand Theme */
+.bg-blue-600, .bg-blue-500 { background-color: var(--accent-blue) !important; }
+.hover\:bg-blue-500:hover, .hover\:bg-blue-600:hover { background-color: #013a75 !important; }
+.text-blue-600, .text-blue-500, .text-blue-400 { color: var(--accent-blue) !important; }
+.border-blue-600, .border-blue-500 { border-color: var(--accent-blue) !important; }
+.shadow-blue-600\/20 { --tw-shadow-color: rgba(1, 69, 140, 0.1) !important; }
+
+.bg-emerald-600, .bg-emerald-500 { background-color: var(--accent-red) !important; }
+.hover\:bg-emerald-500:hover, .hover\:bg-emerald-600:hover { background-color: #b51518 !important; }
+.text-emerald-600, .text-emerald-500, .text-emerald-400 { color: var(--accent-red) !important; }
+.border-emerald-600, .border-emerald-500 { border-color: var(--accent-red) !important; }
+.shadow-emerald-600\/20 { --tw-shadow-color: rgba(214, 25, 29, 0.1) !important; }
+
+/* Pulse animations colors */
+.bg-blue-600\/40 { background-color: rgba(1, 69, 140, 0.4) !important; }
+.bg-emerald-500\/30 { background-color: rgba(214, 25, 29, 0.3) !important; }
+.bg-purple-600\/20 { background-color: rgba(1, 69, 140, 0.2) !important; } /* Use blue for purple glows too for consistency */
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.05), transparent);
+    width: 100%;
+}
+
+.glass-accent {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+}

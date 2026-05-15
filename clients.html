@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partners | PITS</title>
+
+    <!-- meta information for seo -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Pravasis IT Solutions provides website development, custom software, bulk SMS service, whatsapp api's, digital marketing, web design, mobile app development, ERP development, CRM development, suppor calls  and business automation solutions.">
+
+    <meta name="keywords"
+        content="website development Kerala, custom software, bulk SMS service, mobile app, whatsapp api's, digital marketing, ERP development, CRM development">
+
+    <meta name="author" content="Pravasis IT Solutions Pvt Ltd">
+
+    <link rel="canonical" href="https://pravasisit.com/website_dev.html">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="assets/js/components.js?v=1.1"></script>
+</head>
+
+<body class=" text-[#0f172a] overflow-x-hidden">
+
+    <div id="header-container"></div>
+
+    
+
+    
+
+    <main class="relative z-10">
+
+        <section class="pt-48 pb-16 px-6 text-center">
+            <div data-aos="fade-up">
+                <span class="text-blue-500 font-bold tracking-[0.3em] uppercase text-xs">Our Ecosystem</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-[#0f172a] mt-6 mb-6">
+                    Trusted by <span class="text-gradient">Industry Leaders</span>
+                </h1>
+                <p class="text-content-small max-w-2xl mx-auto leading-relaxed">
+                    We take pride in powering the digital infrastructure for over 500+ cooperative societies,
+                    banks, and enterprises across the region.
+                </p>
+            </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto pb-32 px-6">
+            <div id="clients-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
+                <!-- Logos will be injected here by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+        
+    <script>
+        // Define Client Names here for hover titles
+        const clientNames = {
+            1: "Client 1",
+            2: "Client 2",
+            // Add actual names here
+        };
+
+        // Generate Client Logos Dynamically
+        const clientsGrid = document.getElementById('clients-grid');
+        for (let i = 1; i <= 48; i++) {
+            const delay = (i % 4) * 50; 
+            const name = clientNames[i] || `Client ${i}`;
+            const card = `
+                <div class="glass p-6 rounded-3xl border border-slate-200 flex items-center justify-center bg-slate-50 hover:bg-slate-100 hover:border-blue-500/50 transition-all duration-500 group"
+                    data-aos="zoom-in" data-aos-delay="${delay}" title="${name}"
+                    data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="bg-white p-4 rounded-2xl w-full h-32 flex items-center justify-center shadow-inner pointer-events-none">
+                        <img src="assets/Logo/Client${i}.webp" alt="${name}" title="${name}"
+                            class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110">
+                    </div>
+                </div>
+            `;
+            clientsGrid.insertAdjacentHTML('beforeend', card);
+        }
+
+        AOS.init({ duration: 1000, once: true });
+        console.log("Initializing components...");
+        loadComponent("header-container", "nav-header.html");
+        loadComponent("footer-container", "footer.html");
+        
+        // Initialize Tilt if needed (though data-tilt handles it automatically, this is safer for dynamic content)
+        if (window.VanillaTilt) {
+            VanillaTilt.init(document.querySelectorAll(".glass[data-tilt]"));
+        }
+        
+    </script>
+</body>
+</html>
