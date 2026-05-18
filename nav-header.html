@@ -1,4 +1,4 @@
-<nav class="fixed w-full z-50 top-6 px-6 pointer-events-auto">
+<nav id="main-nav" class="fixed w-full z-50 top-6 px-6 pointer-events-auto transition-transform duration-500">
     <div
         class="max-w-6xl mx-auto glass rounded-full px-8 py-4 flex justify-between items-center border border-slate-200 shadow-2xl">
 
@@ -10,7 +10,6 @@
         </a>
 
         <div class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest items-center">
-            <a href="index.html" class="nav-link text-[#0f172a] hover:text-blue-400 transition-colors">Home</a>
             <a href="about.html" class="nav-link text-[#0f172a] hover:text-blue-400 transition-colors">About</a>
 
             <!-- Services Dropdown -->
@@ -195,12 +194,12 @@
             <!-- <a href="clients.html" class="nav-link text-[#0f172a] hover:text-blue-400 transition-colors">Clients</a> -->
         </div>
 
-        <!-- <div class="hidden sm:block">
+        <div class="hidden sm:block">
             <a href="contact.html"
                 class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-xs font-bold transition-all shadow-md">
                 Contact Us
             </a>
-        </div> -->
+        </div>
 
         <button id="mobile-menu-btn"
             onclick="document.getElementById('mobile-menu').classList.remove('hidden'); document.getElementById('mobile-menu').classList.add('flex'); setTimeout(() => document.getElementById('mobile-menu').classList.remove('translate-x-full'), 10);"
@@ -215,7 +214,9 @@
     class="fixed inset-0 z-[100] bg-white/95 backdrop-blur-2xl translate-x-full transition-transform duration-500 hidden flex-col md:hidden">
     <div class="flex flex-col h-full p-8">
         <div class="flex justify-between items-center mb-12">
-            <img src="assets/img/pits_logo.png" alt="Pravasis IT Solutions Logo" class="h-10 w-auto">
+            <a href="index.html">
+                <img src="assets/img/pits_logo.png" alt="Pravasis IT Solutions Logo" class="h-10 w-auto">
+            </a>
             <button id="close-menu-btn"
                 onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); setTimeout(() => { document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('mobile-menu').classList.remove('flex'); }, 500);"
                 class="text-[#0f172a] hover:text-red-500 transition-colors">
@@ -224,8 +225,6 @@
         </div>
 
         <nav class="flex flex-col space-y-6">
-            <a href="index.html"
-                class="mobile-link text-2xl font-bold text-[#0f172a] hover:text-blue-400 transition-colors">Home</a>
             <a href="about.html"
                 class="mobile-link text-2xl font-bold text-[#0f172a] hover:text-blue-400 transition-colors">About</a>
             <a href="services.html"
@@ -269,44 +268,83 @@
 </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const currentPage = window.location.pathname.split("/").pop() || "index.html";
-        const navLinks = document.querySelectorAll(".nav-link");
-        const dropdownLinks = document.querySelectorAll(".group\\/item");
+    (function () {
+        function initNav() {
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+            const navLinks = document.querySelectorAll(".nav-link");
+            const dropdownLinks = document.querySelectorAll(".group\\/item");
 
-        navLinks.forEach(link => {
-            const linkPage = link.getAttribute("href");
-            if (currentPage === linkPage) {
-                link.classList.add("active");
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute("href");
+                if (currentPage === linkPage) {
+                    link.classList.add("active");
+                }
+            });
+
+            // Highlight parent "Services" if a sub-page is active
+            const servicePages = ["website_dev.html", "sms_services.html", "custom_sw.html", "whatsapp_api.html", "support.html", "digital_marketing.html"];
+            const productPages = ["sahakarimis.html", "rioeasy.html", "mulla.html", "vyapari.html", "easylender.html"];
+
+            if (servicePages.includes(currentPage)) {
+                const serviceNavLink = document.querySelector('a[href="services.html"]');
+                if (serviceNavLink) serviceNavLink.classList.add("active");
+
+                dropdownLinks.forEach(link => {
+                    if (link.getAttribute("href") === currentPage) {
+                        link.classList.add("bg-blue-100");
+                        link.querySelector("span").classList.replace("text-slate-600", "text-[#0f172a]");
+                    }
+                });
             }
-        });
 
-        // Highlight parent "Services" if a sub-page is active
-        const servicePages = ["website_dev.html", "sms_services.html", "custom_sw.html", "whatsapp_api.html", "support.html", "digital_marketing.html"];
-        const productPages = ["sahakarimis.html", "rioeasy.html", "mulla.html", "vyapari.html", "easylender.html"];
+            if (productPages.includes(currentPage)) {
+                const productNavLink = document.querySelector('a[href="products.html"]');
+                if (productNavLink) productNavLink.classList.add("active");
 
-        if (servicePages.includes(currentPage)) {
-            const serviceNavLink = document.querySelector('a[href="services.html"]');
-            if (serviceNavLink) serviceNavLink.classList.add("active");
+                dropdownLinks.forEach(link => {
+                    if (link.getAttribute("href") === currentPage) {
+                        link.classList.add("bg-blue-100");
+                        link.querySelector("span").classList.replace("text-slate-600", "text-[#0f172a]");
+                    }
+                });
+            }
 
-            dropdownLinks.forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("bg-blue-100");
-                    link.querySelector("span").classList.replace("text-slate-600", "text-[#0f172a]");
-                }
-            });
+            // Vanishing Header / Smart Scroll Logic
+            const nav = document.getElementById('main-nav');
+            if (!nav) return;
+
+            if (!window.hasNavScrollListener) {
+                let lastScrollY = window.scrollY;
+                let ticking = false;
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            const currentScrollY = window.scrollY;
+
+                            if (currentScrollY > 100) {
+                                if (currentScrollY > lastScrollY) {
+                                    // Scrolling down - vanish the header
+                                    nav.style.transform = 'translateY(-150%)';
+                                } else {
+                                    // Scrolling up - show the header
+                                    nav.style.transform = 'translateY(0)';
+                                }
+                            } else {
+                                // Near the top - always show
+                                nav.style.transform = 'translateY(0)';
+                            }
+
+                            lastScrollY = currentScrollY;
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+                window.hasNavScrollListener = true;
+            }
         }
 
-        if (productPages.includes(currentPage)) {
-            const productNavLink = document.querySelector('a[href="products.html"]');
-            if (productNavLink) productNavLink.classList.add("active");
-
-            dropdownLinks.forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("bg-blue-100");
-                    link.querySelector("span").classList.replace("text-slate-600", "text-[#0f172a]");
-                }
-            });
-        }
-    });
+        initNav();
+    })();
 </script>

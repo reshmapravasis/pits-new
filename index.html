@@ -24,7 +24,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/img/pits_logo.png">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
     <script type="application/ld+json">
@@ -54,30 +54,31 @@
         <header class="relative h-screen min-h-[800px] w-full overflow-hidden">
             <!-- Full Screen Background Image -->
             <div class="absolute inset-0 z-0">
-                <img src="assets/img/tech_partner_hero_v3.png" alt="PITS Tech Partners" class="w-full h-full object-cover">
+                <img src="assets/img/tech_partner_hero_v3.png" alt="PITS Tech Partners"
+                    class="w-full h-full object-cover">
                 <!-- Overlay for depth and text contrast -->
                 <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
                 <div class="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
             </div>
 
             <!-- Content positioned at the bottom -->
-            <div class="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-32">
+            <div class="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-56">
                 <div class="max-w-4xl">
-                    <div class="inline-block glass px-6 py-2 rounded-full border border-slate-200 mb-8"
+                    <!-- <div class="inline-block glass px-6 py-2 rounded-full border border-slate-200 mb-8"
                         data-aos="fade-right">
-                        <span class="text-blue-500 font-bold tracking-widest text-xs uppercase">Future-Proof
-                            Innovation</span>
-                    </div>
+                        <span class="text-blue-500 font-bold tracking-widest text-xs uppercase"></span>
+                    </div> -->
                     <h1 class="text-6xl md:text-8xl font-extrabold text-[#0f172a] tracking-tight leading-[0.9] mb-8"
                         data-aos="fade-right" data-aos-delay="100">
-                        Next-Gen <br><span class="heading-accent text-emerald-600">Solutions</span>
+                        Trusted Tech Partner <br><span class="heading-accent text-emerald-600">for 500+
+                            businesses</span>
                     </h1>
-                    <p class="text-slate-500 max-w-2xl text-base md:text-lg leading-relaxed mb-12" data-aos="fade-right"
+                    <!-- <p class="text-slate-500 max-w-2xl text-base md:text-lg leading-relaxed mb-12" data-aos="fade-right"
                         data-aos-delay="200">
                         AI-Assisted product development partner for 500+ businesses
 
-                    </p>
-                    <div class="flex gap-6" data-aos="fade-right" data-aos-delay="300">
+                    </p> -->
+                    <!-- <div class="flex gap-6" data-aos="fade-right" data-aos-delay="300">
                         <button onclick="location.href='products.html'"
                             class="bg-blue-600 px-10 py-5 rounded-full font-bold text-white hover:bg-blue-500 transition shadow-2xl shadow-blue-900/30 text-lg">
                             Explore Ecosystem
@@ -86,7 +87,7 @@
                             class="glass px-10 py-5 rounded-full font-bold hover:bg-white transition border border-slate-300 text-lg">
                             Get in Touch
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -96,232 +97,564 @@
             </div> -->
         </header>
 
-        <a href="clients.html"
-            class="block py-10 bg-slate-50 border-y border-slate-200 overflow-hidden hover:bg-slate-100 transition-colors cursor-pointer group/marquee">
-            <div
-                class="animate-marquee whitespace-nowrap flex items-center gap-12 text-slate-400 font-bold tracking-widest uppercase text-[13px] group-hover/marquee:text-slate-500 transition-colors">
-                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-bank"></i> Chakkittapara SCB
-                    LTD</span>
-                <span class="mx-4 text-slate-200">|</span>
-                <span class="flex items-center gap-4"><i class="bi bi-bank"></i> CSC Bank</span>
-                <span class="mx-4 text-slate-200">|</span>
-                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-bank"></i> Kavanur SCB LTD</span>
-                <span class="mx-4 text-slate-200">|</span>
-                <span class="flex items-center gap-4"><i class="bi bi-bank"></i> Finmax Nidhi LTD</span>
-                <span class="mx-4 text-slate-200">|</span>
-                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-bank"></i> Sambad Vikas Nidhi
-                    LTD</span>
-                <span class="mx-4 text-slate-200">|</span>
-                <span class="flex items-center gap-4"><i class="bi bi-bank"></i> PMKWCS</span>
-                <span class="mx-4 text-slate-200 text-blue-500">|</span>
-                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-bank"></i> Our Clients</span>
-            </div>
-        </a>
+        <!-- Featured Clients Section (White Rabbit Style) -->
+        <section class="py-24 px-6 relative bg-white border-y border-slate-200">
+            <div class="max-w-7xl mx-auto flex flex-col gap-16">
+                <div data-aos="fade-up" class="max-w-6xl mx-auto text-center w-full">
+                    <h2 id="scroll-reveal-text"
+                        class="text-4xl md:text-6xl lg:text-[4.5rem] leading-tight font-light tracking-tight text-slate-300 select-none">
+                        <!-- JS injects character spans here -->
+                    </h2>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const container = document.getElementById('scroll-reveal-text');
+                            if (!container) return;
 
-        <!-- Why Choose Us Section -->
-        <section class="py-24 px-6 relative overflow-hidden">
-            <!-- Decorative Glow -->
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 blur-[120px] pointer-events-none">
-            </div>
+                            const rawText = "For over 10 years, we’ve helped 500+ businesses run more smoothly with reliable technology. From ERP systems to fintech infrastructure, we build products that businesses rely on every day.";
+                            const words = rawText.split(' ');
 
-            <div class="max-w-6xl mx-auto relative z-10">
-                <!-- Trusted Clients Box (Moved Above) -->
-                <div class="mb-24" data-aos="fade-up">
-                    <div class="card-ultra-rounded border border-slate-200 relative overflow-hidden group">
-                        <!-- Background Glows -->
+                            words.forEach((word, wordIdx) => {
+                                const wordSpan = document.createElement('span');
+                                wordSpan.className = 'inline-flex';
+
+                                const isBold = wordIdx === 6 || wordIdx === 7; // "500+ businesses"
+
+                                word.split('').forEach(char => {
+                                    const charSpan = document.createElement('span');
+                                    charSpan.className = `reveal-char text-slate-300 ${isBold ? 'font-bold' : ''}`;
+                                    charSpan.innerText = char;
+                                    wordSpan.appendChild(charSpan);
+                                });
+
+                                container.appendChild(wordSpan);
+
+                                if (wordIdx < words.length - 1) {
+                                    container.appendChild(document.createTextNode(' '));
+                                }
+                            });
+
+                            const chars = container.querySelectorAll('.reveal-char');
+
+                            let targetProgress = 0;
+                            let currentProgress = 0;
+                            let isAnimating = false;
+
+                            const updateScroll = () => {
+                                const rect = container.getBoundingClientRect();
+                                const windowHeight = window.innerHeight;
+
+                                const start = windowHeight * 0.85;
+                                const end = windowHeight * 0.25;
+
+                                let progress = (start - rect.top) / (start - end);
+                                targetProgress = Math.max(0, Math.min(1, progress));
+
+                                if (!isAnimating) {
+                                    isAnimating = true;
+                                    requestAnimationFrame(animate);
+                                }
+                            };
+
+                            const animate = () => {
+                                currentProgress += (targetProgress - currentProgress) * 0.08;
+
+                                const revealCount = Math.floor(currentProgress * chars.length);
+
+                                chars.forEach((charSpan, index) => {
+                                    if (index < revealCount) {
+                                        charSpan.classList.remove('text-slate-300');
+                                        if (charSpan.classList.contains('font-bold')) {
+                                            charSpan.classList.add('text-blue-600');
+                                        } else {
+                                            charSpan.classList.add('text-[#0f172a]');
+                                        }
+                                    } else {
+                                        charSpan.classList.remove('text-[#0f172a]', 'text-blue-600');
+                                        charSpan.classList.add('text-slate-300');
+                                    }
+                                });
+
+                                if (Math.abs(targetProgress - currentProgress) > 0.001) {
+                                    requestAnimationFrame(animate);
+                                } else {
+                                    isAnimating = false;
+                                }
+                            };
+
+                            window.addEventListener('scroll', updateScroll);
+                            updateScroll();
+                        });
+                    </script>
+                </div>
+
+                <div class="flex justify-end w-full pr-4" data-aos="fade-up" data-aos-delay="100">
+                    <a href="clients.html"
+                        class="group flex items-center gap-4 text-[13px] font-bold uppercase tracking-[0.2em] text-[#0f172a] hover:text-blue-600 transition-colors">
+                        SEE ALL
+                    </a>
+                </div>
+
+                <!-- Scrolling Logos Grid -->
+                <div class="overflow-hidden relative w-full mt-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="animate-marquee flex gap-6 hover:![animation-play-state:paused] py-4">
+                        <!-- Original Set -->
                         <div
-                            class="absolute -top-24 -right-24 w-80 h-80 bg-blue-50 rounded-full blur-[100px] group-hover:bg-blue-100 transition-all duration-700">
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client1.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
                         </div>
                         <div
-                            class="absolute -bottom-24 -left-24 w-80 h-80 bg-emerald-600/10 rounded-full blur-[100px] group-hover:bg-emerald-100 transition-all duration-700">
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client2.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client3.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client4.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client5.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client6.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client7.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client8.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
                         </div>
 
-                        <div class="relative z-10 flex flex-col lg:flex-row gap-12 items-center">
-                            <div class="lg:w-1/3 text-center lg:text-left">
-                                <h3 class="text-5xl md:text-6xl font-extrabold text-[#0f172a] mb-4">500+</h3>
-                                <h4 class="text-2xl font-bold text-gradient mb-4">Trusted Clients</h4>
-                                <p class="text-content-small mb-8">
-                                    For over 10 years, we’ve helped 500+ businesses run more smoothly with reliable
-                                    technology. From ERP systems to fintech infrastructure, we build products that
-                                    businesses rely on every day.
+                        <!-- Duplicated Set for infinite scroll -->
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client1.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client2.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client3.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client4.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client5.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client6.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client7.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                        <div
+                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                            <img src="assets/Logo/Client8.webp"
+                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                                alt="Client">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section (Full Sticky Scroll Layout) -->
+        <section id="why-choose-section" class="h-[450vh] relative bg-white border-b border-slate-200">
+            <!-- Sticky Viewport Container -->
+            <div
+                class="sticky top-24 w-full h-[calc(100vh-6rem)] flex items-center justify-center overflow-hidden px-6 py-12">
+                <!-- Decorative Glow -->
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/5 blur-[150px] pointer-events-none">
+                </div>
+
+                <div
+                    class="max-w-7xl w-full mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+
+                    <!-- LEFT COLUMN: Sticky Titles -->
+                    <div class="w-full lg:w-5/12 flex flex-col justify-center z-20">
+                        <span class="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs mb-6 block">
+                            Our Advantage
+                        </span>
+
+                        <div class="grid grid-cols-1 grid-rows-1 relative w-full min-h-[220px] md:min-h-[260px]">
+                            <!-- Title 1 -->
+                            <div
+                                class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-100 translate-y-0">
+                                <h2
+                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    Delivering <br>
+                                    <span class="text-blue-600">Connected</span> <br>
+                                    Ecosystems.
+                                </h2>
+                                <!-- <p class="mt-6 text-base md:text-lg text-slate-500 leading-relaxed max-w-md">
+                                    We eliminate fragmented systems by unifying your core banking, fintech, and customer touchpoints into one seamless ecosystem.
+                                </p> -->
+                            </div>
+
+                            <!-- Title 2 -->
+                            <div
+                                class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
+                                <h2
+                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    Built Around <br>
+                                    <span class="text-emerald-600">Your Workflow.</span>
+                                </h2>
+                                <!-- <p class="mt-6 text-base md:text-lg text-slate-500 leading-relaxed max-w-md">
+                                    Every institution operates differently. We engineer custom architectures and
+                                    intelligent workflows tailored to your specific operational needs.
+                                </p> -->
+                            </div>
+
+                            <!-- Title 3 -->
+                            <div
+                                class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
+                                <h2
+                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    Always Here <br>
+                                    <span class="text-purple-600">For Your Business.</span>
+                                </h2>
+                                <!-- <p class="mt-6 text-base md:text-lg text-slate-500 leading-relaxed max-w-md">
+                                    Technology never sleeps. Our dedicated 24/7 call center and expert support engineers
+                                    ensure your critical infrastructure is always operational.
+                                </p> -->
+                            </div>
+
+                            <!-- Title 4 -->
+                            <div
+                                class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
+                                <h2
+                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    Uncompromising <br>
+                                    <span class="text-red-600">Data Security.</span>
+                                </h2>
+                                <!-- <p class="mt-6 text-base md:text-lg text-slate-500 leading-relaxed max-w-md">
+                                    Financial data requires institutional-grade protection. We implement multi-layered
+                                    encryption and advanced security protocols to safeguard your assets.
+                                </p> -->
+                            </div>
+
+                            <!-- Title 5 -->
+                            <div
+                                class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
+                                <h2
+                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    Built for <br>
+                                    <span class="text-orange-600">Modern Customers.</span>
+                                </h2>
+                                <!-- <p class="mt-6 text-base md:text-lg text-slate-500 leading-relaxed max-w-md">
+                                    Enhance member trust and accessibility with lightning-fast, mobile-optimized web
+                                    portals designed for the modern digital consumer.
+                                </p> -->
+                            </div>
+
+                            <!-- Title 6 -->
+                            <div
+                                class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
+                                <h2
+                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    Connecting Every <br>
+                                    <span class="text-cyan-600">Touchpoint.</span>
+                                </h2>
+                                <!-- <p class="mt-6 text-base md:text-lg text-slate-500 leading-relaxed max-w-md">
+                                    Keep your customers informed in real-time with robust bulk SMS infrastructures and
+                                    automated multi-channel notification systems.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: Sticky Advantage Cards (with Animated Icons) -->
+                    <div class="w-full lg:w-7/12 flex items-center justify-center">
+                        <div class="grid grid-cols-1 grid-rows-1 relative w-full max-w-xl min-h-[420px]">
+
+                            <!-- Card 1 -->
+                            <div
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-100 translate-y-0 scale-100">
+                                <div
+                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-blue-500/20 mb-8 overflow-hidden p-2">
+                                    <svg width="0" height="0" style="position:absolute;z-index:-1;">
+                                        <filter id="blue-ecosystem">
+                                            <feComponentTransfer>
+                                                <feFuncR type="table" tableValues="0.15 1" />
+                                                <feFuncG type="table" tableValues="0.39 1" />
+                                                <feFuncB type="table" tableValues="0.92 1" />
+                                            </feComponentTransfer>
+                                        </filter>
+                                    </svg>
+                                    <img src="assets/img/ecosystem.gif" alt="Ecosystem Icon"
+                                        class="w-16 h-16 object-contain" style="filter: url(#blue-ecosystem);">
+                                </div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <!-- <div
+                                        class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-sm font-bold">
+                                        01</div> -->
+                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">The
+                                        Ecosystem</h3>
+                                </div>
+                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                    Bring your ERP, fintech, communications, and customer platforms into a single
+                                    connected ecosystem.
                                 </p>
-                                <a href="clients.html"
-                                    class="inline-flex items-center gap-2 bg-slate-50 hover:bg-slate-100 text-[#0f172a] px-6 py-3 rounded-full border border-slate-200 transition-all text-[13px] font-semibold">
-                                    View All Clients <i class="bi bi-arrow-right"></i>
+                                <a href="products.html"
+                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    Know More
+                                    <i
+                                        class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
                                 </a>
                             </div>
 
-                            <div class="lg:w-2/3 w-full">
-                                <div class="grid grid-cols-3 md:grid-cols-5 gap-4 opacity-50">
-                                    <!-- A dense selection of logos -->
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client1.webp" class="max-h-full max-w-full object-contain"
-                                            alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client2.webp" class="max-h-full max-w-full object-contain"
-                                            alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client3.webp" class="max-h-full max-w-full object-contain"
-                                            alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client4.webp" class="max-h-full max-w-full object-contain"
-                                            alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client5.webp" class="max-h-full max-w-full object-contain"
-                                            alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client6.webp" class="max-h-full max-w-full object-contain"
-                                            alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client7.webp" class="max-h-full max-w-full object-contain"
-                                            alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client8.webp" class="max-h-full max-w-full object-contain"
-                                            alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client9.webp" class="max-h-full max-w-full object-contain"
-                                            alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client10.webp"
-                                            class="max-h-full max-w-full object-contain" alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client11.webp"
-                                            class="max-h-full max-w-full object-contain" alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client12.webp"
-                                            class="max-h-full max-w-full object-contain" alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client13.webp"
-                                            class="max-h-full max-w-full object-contain" alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client14.webp"
-                                            class="max-h-full max-w-full object-contain" alt="Client">
-                                    </div>
-                                    <div
-                                        class="bg-slate-50 p-4 rounded-2xl flex items-center justify-center h-20 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                        <img src="assets/Logo/Client15.webp"
-                                            class="max-h-full max-w-full object-contain" alt="Client">
-                                    </div>
-                                    <!-- Add more if needed -->
+                            <!-- Card 2 -->
+                            <div
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                <!-- <div
+                                    class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-emerald-500 to-emerald-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30 mb-8 animate-pulse">
+                                    <i class="bi bi-gear-wide-connected text-3xl"></i>
+                                </div> -->
+
+                                <div
+                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-emerald-500/20 mb-8 overflow-hidden p-2">
+
+                                    <img src="assets/img/workflow.gif" alt="Workflow Icon"
+                                        class="w-16 h-16 object-contain">
                                 </div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <!-- <div
+                                        class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 text-sm font-bold">
+                                        02</div> -->
+                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">Built
+                                        Around Your Workflow</h3>
+                                </div>
+                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                    From custom software to AI and WhatsApp integrations, every solution is tailored to
+                                    your institution's operations.
+
+                                </p>
+                                <a href="services.html"
+                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    Know More
+                                    <i
+                                        class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
+                                </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-blue-500 font-bold uppercase tracking-widest text-xs">Our Advantage</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-[#0f172a] mt-2">Why Choose PITS?</h2>
-                    <p class="text-base text-slate-500 mt-6 max-w-2xl mx-auto leading-relaxed">One Ecosystem. Multiple
-                        Business Solutions.</p>
-                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Integrated Ecosystem -->
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-blue-500/50 transition-all duration-500 group"
-                        data-aos="fade-up">
-                        <div
-                            class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="bi bi-diagram-3"></i>
-                        </div>
-                        <h3 class="text-2xl font-extrabold text-[#0f172a] mb-4">The Ecosystem</h3>
-                        <p class="text-content-small">Bring your ERP, fintech, communications, and customer platforms
-                            into a single connected ecosystem.</p>
-                    </div>
-
-                    <!-- Custom Solutions -->
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-emerald-500/50 transition-all duration-500 group"
-                        data-aos="fade-up" data-aos-delay="100">
-                        <div
-                            class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="bi bi-gear-wide-connected"></i>
-                        </div>
-                        <h3 class="text-2xl font-extrabold text-[#0f172a] mb-4">Built Around Your Workflow
-                        </h3>
-                        <p class="text-content-small">From custom software to AI and WhatsApp integrations, every
-                            solution is tailored to your institution's operations.</p>
-                    </div>
-
-                    <!-- Support -->
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-purple-500/50 transition-all duration-500 group"
-                        data-aos="fade-up" data-aos-delay="200">
-                        <div
-                            class="w-20 h-20 bg-purple-50 rounded-full flex items-center justify-center text-purple-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="bi bi-headset"></i>
-                        </div>
-                        <h3 class="text-2xl font-extrabold text-[#0f172a] mb-4">24/7 Support</h3>
-                        <p class="text-content-small">Our dedicated support call center ensures that help is always just
-                            a phone call away, 24/7.</p>
-                    </div>
-
-                    <!-- Security -->
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-red-500/50 transition-all duration-500 group"
-                            data-aos="fade-up" data-aos-delay="300">
+                            <!-- Card 3 -->
                             <div
-                                class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center text-red-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                                <i class="bi bi-shield-lock"></i>
-                            </div>
-                            <h3 class="text-2xl font-extrabold text-[#0f172a] mb-4">Enterprise -Grade Security</h3>
-                            <p class="text-content-small">We implement multi-layered security protocols to safeguard
-                                sensitive financial and data.</p>
-                        </div>
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                <div
+                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-emerald-500/20 mb-8 overflow-hidden p-2">
 
-                        <!-- Web Presence -->
-                        <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-orange-500/50 transition-all duration-500 group"
-                            data-aos="fade-up" data-aos-delay="400">
-                            <div
-                                class="w-20 h-20 bg-orange-50 rounded-full flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                                <i class="bi bi-window-sidebar"></i>
+                                    <img src="assets/img/supp.gif" alt="Workflow Icon" class="w-16 h-16 object-contain">
+                                </div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <!-- <div
+                                        class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-sm font-bold">
+                                        03</div> -->
+                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">24/7
+                                        Support</h3>
+                                </div>
+                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                    Our dedicated support call center ensures that expert help is always just a phone
+                                    call away, 24/7.
+                                </p>
+                                <a href="contact.html"
+                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    Know More
+                                    <i
+                                        class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
+                                </a>
                             </div>
-                            <h3 class="text-2xl font-extrabold text-[#0f172a] mb-4">Built for Modern Customers</h3>
-                            <p class="text-content-small">Mobile-friendly websites and digital experiences that
-                                strengthen trust and accessibility.
-                            </p>
-                        </div>
 
-                        <!-- Communication -->
-                        <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-cyan-500/50 transition-all duration-500 group"
-                            data-aos="fade-up" data-aos-delay="500">
+                            <!-- Card 4 -->
                             <div
-                                class="w-20 h-20 bg-cyan-50 rounded-full flex items-center justify-center text-cyan-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                                <i class="bi bi-chat-left-dots"></i>
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                <div
+                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-red-500/20 mb-8 overflow-hidden p-2">
+                                    <svg width="0" height="0" style="position:absolute;z-index:-1;">
+                                        <filter id="red-key">
+                                            <feComponentTransfer>
+                                                <feFuncR type="table" tableValues="0.84 1" />
+                                                <feFuncG type="table" tableValues="0.10 1" />
+                                                <feFuncB type="table" tableValues="0.11 1" />
+                                            </feComponentTransfer>
+                                        </filter>
+                                    </svg>
+                                    <img src="assets/img/security.gif" alt="Security Icon"
+                                        class="w-16 h-16 object-contain" style="filter: url(#red-key);">
+                                </div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <!-- <div
+                                        class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600 text-sm font-bold">
+                                        04</div> -->
+                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">
+                                        Enterprise-Grade Security</h3>
+                                </div>
+                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                    We implement multi-layered security protocols to safeguard sensitive financial and
+                                    data.
+
+                                </p>
+                                <a href="services.html"
+                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-red-600 hover:bg-red-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    Know More
+                                    <i
+                                        class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
+                                </a>
                             </div>
-                            <h3 class="text-2xl font-extrabold text-[#0f172a] mb-4">Reliable Communication
-                                Infrastructure</h3>
-                            <p class="text-content-small">Bulk SMS and automated notification systems that keep your
-                                customers informed in real time.</p>
+
+                            <!-- Card 5 -->
+                            <div
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                <div
+                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-orange-500/20 mb-8 overflow-hidden p-2">
+
+                                    <img src="assets/img/development.gif" alt="Customers Icon"
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <!-- <div
+                                        class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-sm font-bold">
+                                        05</div> -->
+                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">Built
+                                        for Modern Customers</h3>
+                                </div>
+                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                    Mobile-friendly websites and digital experiences that strengthen trust and
+                                    accessibility.
+
+                                </p>
+                                <a href="services.html"
+                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-orange-600 hover:bg-orange-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    Know More
+                                    <i
+                                        class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
+                                </a>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                <div
+                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-cyan-500/20 mb-8 overflow-hidden p-2">
+
+                                    <img src="assets/img/sms.gif" alt="Communication Icon"
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <!-- <div
+                                        class="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 text-sm font-bold">
+                                        06</div> -->
+                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">
+                                        Reliable Communication Infrastructure</h3>
+                                </div>
+                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                    Bulk SMS and automated notification systems that keep your customers informed in
+                                    real time.
+                                </p>
+                                <a href="services.html"
+                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    Know More
+                                    <i
+                                        class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
 
-
                 </div>
+            </div>
+
+            <!-- Full Sticky Scroll JS -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const section = document.getElementById('why-choose-section');
+                    const titles = section.querySelectorAll('.sticky-title');
+                    const cards = section.querySelectorAll('.sticky-card');
+                    if (!section || !titles.length || !cards.length) return;
+
+                    const handleStickyScroll = () => {
+                        const rect = section.getBoundingClientRect();
+                        const windowHeight = window.innerHeight;
+
+                        const totalScroll = rect.height - windowHeight;
+                        const currentScroll = -rect.top;
+
+                        let progress = currentScroll / totalScroll;
+                        progress = Math.max(0, Math.min(1, progress));
+
+                        let activeIdx = Math.floor(progress * 6);
+                        activeIdx = Math.min(5, activeIdx);
+
+                        titles.forEach((title, idx) => {
+                            if (idx === activeIdx) {
+                                title.classList.remove('opacity-0', '-translate-y-8', 'translate-y-8', 'pointer-events-none');
+                                title.classList.add('opacity-100', 'translate-y-0');
+                            } else {
+                                title.classList.remove('opacity-100', 'translate-y-0');
+                                title.classList.add('opacity-0', idx < activeIdx ? '-translate-y-8' : 'translate-y-8', 'pointer-events-none');
+                            }
+                        });
+
+                        cards.forEach((card, idx) => {
+                            if (idx === activeIdx) {
+                                card.classList.remove('opacity-0', '-translate-y-12', 'translate-y-12', 'pointer-events-none', 'scale-95');
+                                card.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+                            } else {
+                                card.classList.remove('opacity-100', 'translate-y-0', 'scale-100');
+                                card.classList.add('opacity-0', idx < activeIdx ? '-translate-y-12' : 'translate-y-12', 'pointer-events-none', 'scale-95');
+                            }
+                        });
+                    };
+
+                    window.addEventListener('scroll', handleStickyScroll);
+                    handleStickyScroll();
+                });
+            </script>
         </section>
 
 
@@ -341,7 +674,8 @@
                     class="absolute -left-20 -top-20 w-80 h-80 bg-blue-400/10 rounded-full blur-[120px] pointer-events-none group-hover/tech:bg-blue-400/20 transition-all duration-500">
                 </div>
 
-                <div class="relative z-10 mx-auto md:mr-0 md:ml-auto w-full md:w-[400px] lg:w-[500px] xl:w-[540px] flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/tech:-translate-x-2 group-hover/tech:scale-[1.02]">
+                <div
+                    class="relative z-10 mx-auto md:mr-0 md:ml-auto w-full md:w-[400px] lg:w-[500px] xl:w-[540px] flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/tech:-translate-x-2 group-hover/tech:scale-[1.02]">
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold text-blue-600 rounded-full bg-blue-50 border border-blue-100 mb-6 uppercase tracking-widest">
                         <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
@@ -394,7 +728,8 @@
                     class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-400/10 rounded-full blur-[120px] pointer-events-none group-hover/eco:bg-emerald-400/20 transition-all duration-500">
                 </div>
 
-                <div class="relative z-10 mx-auto md:ml-0 md:mr-auto w-full md:w-[400px] lg:w-[500px] xl:w-[540px] flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/eco:translate-x-2 group-hover/eco:scale-[1.02]">
+                <div
+                    class="relative z-10 mx-auto md:ml-0 md:mr-auto w-full md:w-[400px] lg:w-[500px] xl:w-[540px] flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/eco:translate-x-2 group-hover/eco:scale-[1.02]">
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold text-emerald-600 rounded-full bg-emerald-50 border border-emerald-100 mb-6 uppercase tracking-widest">
                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
