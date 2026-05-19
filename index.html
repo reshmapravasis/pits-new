@@ -53,12 +53,17 @@
 
         <header class="relative h-screen min-h-[800px] w-full overflow-hidden">
             <!-- Full Screen Background Image -->
-            <div class="absolute inset-0 z-0">
-                <img src="assets/img/tech_partner_hero_v3.png" alt="PITS Tech Partners"
-                    class="w-full h-full object-cover">
+            <div class="absolute inset-0 z-0 bg-white">
+                <div class="absolute inset-y-0 right-0 w-full lg:w-[85%]">
+                    <img src="assets/img/hero1.png" alt="PITS Tech Partners"
+                        class="w-full h-full object-cover object-right lg:object-center">
+                </div>
                 <!-- Overlay for depth and text contrast -->
-                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
-                <div class="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent w-full lg:w-[60%] z-10">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10"></div>
+                <div class="absolute inset-0 bg-white/20 backdrop-blur-[2px] z-10"></div>
             </div>
 
             <!-- Content positioned at the bottom -->
@@ -78,16 +83,18 @@
                         AI-Assisted product development partner for 500+ businesses
 
                     </p> -->
-                    <!-- <div class="flex gap-6" data-aos="fade-right" data-aos-delay="300">
+                    <div class="flex gap-6 ml-[65px] md:ml-[210px] lg:ml-[250px]" data-aos="fade-up"
+                        data-aos-delay="300">
                         <button onclick="location.href='products.html'"
-                            class="bg-blue-600 px-10 py-5 rounded-full font-bold text-white hover:bg-blue-500 transition shadow-2xl shadow-blue-900/30 text-lg">
-                            Explore Ecosystem
+                            class="bg-blue-600 px-7 py-2.5 rounded-full font-bold text-white hover:bg-blue-500 transition shadow-lg shadow-blue-900/30 text-base">
+                            Explore Our Ecosystem
                         </button>
-                        <button onclick="location.href='contact.html'"
-                            class="glass px-10 py-5 rounded-full font-bold hover:bg-white transition border border-slate-300 text-lg">
+
+                        <!-- <button onclick="location.href='contact.html'"
+                            class="glass px-7 py-3.5 rounded-full font-bold hover:bg-white transition border border-slate-300 text-base">
                             Get in Touch
-                        </button>
-                    </div> -->
+                        </button> -->
+                    </div>
                 </div>
             </div>
 
@@ -102,87 +109,130 @@
             <div class="max-w-7xl mx-auto flex flex-col gap-16">
                 <div data-aos="fade-up" class="max-w-6xl mx-auto text-center w-full">
                     <h2 id="scroll-reveal-text"
-                        class="text-4xl md:text-6xl lg:text-[4.5rem] leading-tight font-light tracking-tight text-slate-300 select-none">
-                        <!-- JS injects character spans here -->
+                        class="text-4xl md:text-6xl lg:text-[4.5rem] leading-[1.15] font-light tracking-tight text-center select-none">
                     </h2>
                     <script>
                         document.addEventListener('DOMContentLoaded', () => {
+
                             const container = document.getElementById('scroll-reveal-text');
-                            if (!container) return;
 
-                            const rawText = "For over 10 years, we’ve helped 500+ businesses run more smoothly with reliable technology. From ERP systems to fintech infrastructure, we build products that businesses rely on every day.";
-                            const words = rawText.split(' ');
+                            const text = "For over 10 years, we’ve helped 500+ businesses run more smoothly with reliable technology. From ERP systems to fintech infrastructure, we build products that businesses rely on every day.";
 
-                            words.forEach((word, wordIdx) => {
-                                const wordSpan = document.createElement('span');
-                                wordSpan.className = 'inline-flex';
+                            const highlightWords = ['500+', 'businesses', 'reliable', 'technology', 'ERP', 'systems', 'fintech'];
 
-                                const isBold = wordIdx === 6 || wordIdx === 7; // "500+ businesses"
+                            container.innerHTML = '';
 
-                                word.split('').forEach(char => {
-                                    const charSpan = document.createElement('span');
-                                    charSpan.className = `reveal-char text-slate-300 ${isBold ? 'font-bold' : ''}`;
-                                    charSpan.innerText = char;
-                                    wordSpan.appendChild(charSpan);
+                            text.split(' ').forEach((word, wordIndex) => {
+
+                                const wordWrap = document.createElement('span');
+                                wordWrap.className = 'inline-block mr-[0.35em]';
+
+                                const cleanWord = word.replace(/[.,]/g, '');
+                                let isHighlight = highlightWords.includes(cleanWord);
+
+                                // Only highlight the first 'businesses' (which is at index 7)
+                                if (cleanWord === 'businesses' && wordIndex !== 7) {
+                                    isHighlight = false;
+                                }
+
+                                word.split('').forEach((char, index) => {
+
+                                    const span = document.createElement('span');
+
+                                    span.className = `
+                                        letter
+                                        inline-block
+                                        transition-all
+                                        duration-300
+                                        ease-out
+                                        will-change-transform
+                                        ${isHighlight ? 'text-blue-600 font-bold' : 'text-slate-800'}
+                                    `;
+
+                                    span.dataset.index = index;
+
+                                    span.textContent = char;
+
+                                    wordWrap.appendChild(span);
+
                                 });
 
-                                container.appendChild(wordSpan);
+                                container.appendChild(wordWrap);
 
-                                if (wordIdx < words.length - 1) {
-                                    container.appendChild(document.createTextNode(' '));
-                                }
                             });
 
-                            const chars = container.querySelectorAll('.reveal-char');
+                            const letters = document.querySelectorAll('.letter');
 
-                            let targetProgress = 0;
-                            let currentProgress = 0;
-                            let isAnimating = false;
+                            let scrollY = window.scrollY;
 
-                            const updateScroll = () => {
-                                const rect = container.getBoundingClientRect();
-                                const windowHeight = window.innerHeight;
+                            // MOUSE EFFECT
+                            document.addEventListener('mousemove', (e) => {
 
-                                const start = windowHeight * 0.85;
-                                const end = windowHeight * 0.25;
+                                letters.forEach((letter, i) => {
 
-                                let progress = (start - rect.top) / (start - end);
-                                targetProgress = Math.max(0, Math.min(1, progress));
+                                    const rect = letter.getBoundingClientRect();
 
-                                if (!isAnimating) {
-                                    isAnimating = true;
-                                    requestAnimationFrame(animate);
-                                }
-                            };
+                                    const x = rect.left + rect.width / 2;
+                                    const y = rect.top + rect.height / 2;
 
-                            const animate = () => {
-                                currentProgress += (targetProgress - currentProgress) * 0.08;
+                                    const distance = Math.hypot(
+                                        e.clientX - x,
+                                        e.clientY - y
+                                    );
 
-                                const revealCount = Math.floor(currentProgress * chars.length);
+                                    const maxDistance = 140;
 
-                                chars.forEach((charSpan, index) => {
-                                    if (index < revealCount) {
-                                        charSpan.classList.remove('text-slate-300');
-                                        if (charSpan.classList.contains('font-bold')) {
-                                            charSpan.classList.add('text-blue-600');
-                                        } else {
-                                            charSpan.classList.add('text-[#0f172a]');
-                                        }
+                                    if (distance < maxDistance) {
+
+                                        const intensity = 1 - distance / maxDistance;
+
+                                        const moveX = (x - e.clientX) * 0.06 * intensity;
+                                        const moveY = (y - e.clientY) * 0.06 * intensity;
+
+                                        const scrollWave = Math.sin((scrollY * 0.01) + i * 0.3) * 8;
+
+                                        letter.style.transform = `
+                                            translate(${moveX}px, ${moveY + scrollWave}px)
+                                            scale(${1 + intensity * 0.35})
+                                            rotate(${moveX * 0.08}deg)
+                                        `;
+
+                                        letter.style.filter = `
+                                            brightness(${1 + intensity * 0.5})
+                                        `;
+
                                     } else {
-                                        charSpan.classList.remove('text-[#0f172a]', 'text-blue-600');
-                                        charSpan.classList.add('text-slate-300');
+
+                                        const scrollWave = Math.sin((scrollY * 0.01) + i * 0.3) * 8;
+
+                                        letter.style.transform = `
+                                            translateY(${scrollWave}px)
+                                        `;
+
+                                        letter.style.filter = 'brightness(1)';
                                     }
+
                                 });
 
-                                if (Math.abs(targetProgress - currentProgress) > 0.001) {
-                                    requestAnimationFrame(animate);
-                                } else {
-                                    isAnimating = false;
-                                }
-                            };
+                            });
 
-                            window.addEventListener('scroll', updateScroll);
-                            updateScroll();
+                            // SCROLL EFFECT
+                            window.addEventListener('scroll', () => {
+
+                                scrollY = window.scrollY;
+
+                                letters.forEach((letter, i) => {
+
+                                    const wave = Math.sin((scrollY * 0.015) + i * 0.25) * 10;
+
+                                    letter.style.transform = `
+                                        translateY(${wave}px)
+                                    `;
+
+                                });
+
+                            });
+
                         });
                     </script>
                 </div>

@@ -100,51 +100,172 @@
             </div>
         </section>
 
-        <section id="values" class="py-24 bg-slate-50 border-y border-slate-100">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-blue-500 font-bold uppercase tracking-widest text-xs">Our Principles</span>
-                    <h2 class="text-6xl md:text-8xl font-extrabold text-[#0f172a] tracking-tight mt-2">What Drives Us
-                    </h2>
+        <section id="values" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-12" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-bold text-[#0f172a] tracking-tight">Our values</h2>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center hover:-translate-y-2 hover:border-blue-200 transition-all duration-300"
-                        data-aos="fade-up">
-                        <i class="bi bi-shield-check text-blue-500 text-4xl"></i>
-                        <h5 class="text-[#0f172a] font-bold mt-6 mb-2 text-xl">Integrity</h5>
-                        <p class="text-slate-500 text-sm">Maintaining the highest security standards for financial data.
-                        </p>
+                <div class="flex flex-col lg:flex-row h-[500px] lg:h-[400px] gap-4 w-full group/accordion">
+
+                    <!-- Card 1 -->
+                    <div class="group relative flex-[1] lg:flex-[3] lg:group-hover/accordion:flex-[1] lg:hover:!flex-[3] transition-all duration-700 ease-in-out rounded-3xl overflow-hidden cursor-pointer"
+                        data-aos="fade-up" data-aos-delay="0">
+                        <img src="assets/img/integrity.png" alt="Integrity"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                        <div class="absolute inset-0 bg-black/20 transition-all duration-700"></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 lg:opacity-100 lg:group-hover/accordion:opacity-0 lg:hover:!opacity-100 transition-all duration-700">
+                        </div>
+
+                        <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end h-full">
+                            <div
+                                class="flex flex-col items-center lg:items-start lg:group-hover/accordion:items-center lg:hover:!items-start transform transition-transform duration-700">
+                                <i class="bi bi-shield-check text-4xl mb-4 text-white font-light"></i>
+                                <h3
+                                    class="text-xl md:text-2xl font-bold whitespace-nowrap mb-0 lg:mb-2 lg:group-hover/accordion:mb-0 lg:hover:!mb-2 text-white transition-all duration-700">
+                                    Integrity</h3>
+
+                                <div
+                                    class="grid grid-rows-[0fr] lg:grid-rows-[1fr] lg:group-hover/accordion:grid-rows-[0fr] lg:hover:!grid-rows-[1fr] transition-all duration-700 w-full text-center lg:text-left">
+                                    <div
+                                        class="overflow-hidden opacity-0 lg:opacity-100 lg:group-hover/accordion:opacity-0 lg:hover:!opacity-100 transition-opacity duration-700 delay-100">
+                                        <p
+                                            class="text-slate-300 text-sm md:text-base leading-relaxed whitespace-normal mt-2">
+                                            Maintaining the highest security standards for financial data.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center hover:-translate-y-2 hover:border-blue-200 transition-all duration-300"
+                    <!-- Card 2 -->
+                    <div class="group relative flex-[1] lg:hover:flex-[3] transition-all duration-700 ease-in-out rounded-3xl overflow-hidden cursor-pointer"
                         data-aos="fade-up" data-aos-delay="100">
-                        <i class="bi bi-lightbulb text-blue-500 text-4xl"></i>
-                        <h5 class="text-[#0f172a] font-bold mt-6 mb-2 text-xl">Innovation</h5>
-                        <p class="text-slate-500 text-sm">Constantly evolving products like SahakariMIS to lead trends.
-                        </p>
+                        <img src="assets/img/innovation.png" alt="Innovation"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black/20 group-hover:bg-gradient-to-t group-hover:from-black/80 group-hover:via-black/30 group-hover:to-transparent transition-all duration-700">
+                        </div>
+
+                        <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end h-full">
+                            <div
+                                class="flex flex-col items-center lg:group-hover:items-start transform transition-transform duration-700">
+                                <i class="bi bi-lightbulb text-4xl mb-4 text-white font-light"></i>
+                                <h3
+                                    class="text-xl md:text-2xl font-bold whitespace-nowrap mb-0 lg:group-hover:mb-2 text-white transition-all duration-700">
+                                    Innovation</h3>
+
+                                <div
+                                    class="grid grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-700 w-full text-center lg:text-left">
+                                    <div
+                                        class="overflow-hidden opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                        <p
+                                            class="text-slate-300 text-sm md:text-base leading-relaxed whitespace-normal mt-2">
+                                            Constantly evolving products like SahakariMIS to lead trends.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center hover:-translate-y-2 hover:border-blue-200 transition-all duration-300"
+                    <!-- Card 3 -->
+                    <div class="group relative flex-[1] lg:hover:flex-[3] transition-all duration-700 ease-in-out rounded-3xl overflow-hidden cursor-pointer"
                         data-aos="fade-up" data-aos-delay="200">
-                        <i class="bi bi-people text-blue-500 text-4xl"></i>
-                        <h5 class="text-[#0f172a] font-bold mt-6 mb-2 text-xl">Collaboration</h5>
-                        <p class="text-slate-500 text-sm">Tailoring features specifically for Kerala's cooperative
-                            sector.</p>
+                        <img src="assets/img/ais.png" alt="AI-Driven"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black/20 group-hover:bg-gradient-to-t group-hover:from-black/80 group-hover:via-black/30 group-hover:to-transparent transition-all duration-700">
+                        </div>
+
+                        <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end h-full">
+                            <div
+                                class="flex flex-col items-center lg:group-hover:items-start transform transition-transform duration-700">
+                                <i class="bi bi-robot text-4xl mb-4 text-white font-light"></i>
+                                <h3
+                                    class="text-xl md:text-2xl font-bold whitespace-nowrap mb-0 lg:group-hover:mb-2 text-white transition-all duration-700">
+                                    Smart AI</h3>
+
+                                <div
+                                    class="grid grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-700 w-full text-center lg:text-left">
+                                    <div
+                                        class="overflow-hidden opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                        <p
+                                            class="text-slate-300 text-sm md:text-base leading-relaxed whitespace-normal mt-2">
+                                            Smart AI Solutions for Modern Business.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center hover:-translate-y-2 hover:border-blue-200 transition-all duration-300"
+                    <!-- Card 4 -->
+                    <div class="group relative flex-[1] lg:hover:flex-[3] transition-all duration-700 ease-in-out rounded-3xl overflow-hidden cursor-pointer"
                         data-aos="fade-up" data-aos-delay="300">
-                        <i class="bi bi-headset text-blue-500 text-4xl"></i>
-                        <h5 class="text-[#0f172a] font-bold mt-6 mb-2 text-xl">Support</h5>
-                        <p class="text-slate-500 text-sm">24/7 dedicated assistance for all our software partners.</p>
+                        <img src="assets/img/support.png" alt="Support"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black/20 group-hover:bg-gradient-to-t group-hover:from-black/80 group-hover:via-black/30 group-hover:to-transparent transition-all duration-700">
+                        </div>
+
+                        <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end h-full">
+                            <div
+                                class="flex flex-col items-center lg:group-hover:items-start transform transition-transform duration-700">
+                                <i class="bi bi-headset text-4xl mb-4 text-white font-light"></i>
+                                <h3
+                                    class="text-xl md:text-2xl font-bold whitespace-nowrap mb-0 lg:group-hover:mb-2 text-white transition-all duration-700">
+                                    Support</h3>
+
+                                <div
+                                    class="grid grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-700 w-full text-center lg:text-left">
+                                    <div
+                                        class="overflow-hidden opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                        <p
+                                            class="text-slate-300 text-sm md:text-base leading-relaxed whitespace-normal mt-2">
+                                            24/7 dedicated assistance for all our software partners.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Card 5 -->
+                    <div class="group relative flex-[1] lg:hover:flex-[3] transition-all duration-700 ease-in-out rounded-3xl overflow-hidden cursor-pointer"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <img src="assets/img/client.png" alt="Success"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black/20 group-hover:bg-gradient-to-t group-hover:from-black/80 group-hover:via-black/30 group-hover:to-transparent transition-all duration-700">
+                        </div>
+
+                        <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end h-full">
+                            <div
+                                class="flex flex-col items-center lg:group-hover:items-start transform transition-transform duration-700">
+                                <i class="bi bi-people text-4xl mb-4 text-white font-light"></i>
+                                <h3
+                                    class="text-xl md:text-2xl font-bold whitespace-nowrap mb-0 lg:group-hover:mb-2 text-white transition-all duration-700">
+                                    Success Clients</h3>
+
+                                <div
+                                    class="grid grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-700 w-full text-center lg:text-left">
+                                    <div
+                                        class="overflow-hidden opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                        <p
+                                            class="text-slate-300 text-sm md:text-base leading-relaxed whitespace-normal mt-2">
+                                            Delivering Solutions That Ensure Customer Success.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <section id="team" class="py-24 px-6">
-            <div class="max-w-6xl mx-auto">
+            <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16" data-aos="fade-up">
                     <span class="text-blue-500 font-bold uppercase tracking-widest text-xs">Expertise Behind the
                         Code</span>
@@ -152,11 +273,12 @@
                         Leadership</h2>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="flex flex-wrap justify-center gap-10">
 
 
-
-                    <div class="group relative" data-aos="fade-up" data-aos-delay="100">
+                    <!-- President -->
+                    <div class="group relative w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.666rem)]"
+                        data-aos="fade-up" data-aos-delay="100">
                         <div
                             class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 group-hover:border-blue-500/50 transition-all duration-500">
                             <div
@@ -171,22 +293,112 @@
                                 <h4 class="text-2xl font-bold text-[#0f172a]">Sri. P Saidalikutty</h4>
                                 <p class="text-blue-400 text-sm font-medium uppercase tracking-widest mt-1">President
                                 </p>
-                                <div class="flex justify-center gap-4 mt-6">
-                                    <a href="#" class="text-slate-400 hover:text-[#0f172a] transition-colors text-xl"><i
-                                            class="bi bi-linkedin"></i></a>
-                                    <a href="#" class="text-slate-400 hover:text-[#0f172a] transition-colors text-xl"><i
-                                            class="bi bi-globe"></i></a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="group relative" data-aos="fade-up">
+                    <!-- Director1 -->
+                    <div class="group relative w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.666rem)]"
+                        data-aos="fade-up">
                         <div
                             class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 group-hover:border-blue-500/50 transition-all duration-500">
                             <div
                                 class="relative overflow-hidden rounded-full mb-6 w-48 h-48 mx-auto bg-gray-800 border-4 border-slate-100">
-                                <img src="assets/team/BOD1.webp" alt="Sri. Pratheesh Mullakkara"
+                                <img src="assets/team/BOD3.webp" alt="Sri. Pratheesh Mullakkara"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#05070a]/40 via-transparent to-transparent opacity-60">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-[#0f172a]">Sri. C K Krishnadas</h4>
+                                <p class="text-blue-400 text-sm font-medium uppercase tracking-widest mt-1">Board of
+                                    Directors
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Director2 -->
+                    <div class="group relative w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.666rem)]"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 group-hover:border-blue-500/50 transition-all duration-500">
+                            <div
+                                class="relative overflow-hidden rounded-full mb-6 w-48 h-48 mx-auto bg-gray-800 border-4 border-slate-100">
+                                <img src="assets/team/BOD5.webp" alt="Sri. Subramanian MT"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#05070a]/40 via-transparent to-transparent opacity-60">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-[#0f172a]">Sri. M C Aboo</h4>
+                                <p class="text-blue-400 text-sm font-medium uppercase tracking-widest mt-1">Board of
+                                    Directors
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Director 3 -->
+                    <div class="group relative w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.666rem)]"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 group-hover:border-blue-500/50 transition-all duration-500">
+                            <div
+                                class="relative overflow-hidden rounded-full mb-6 w-48 h-48 mx-auto bg-gray-800 border-4 border-slate-100">
+                                <img src="assets/team/BOD4.webp" alt="Sri. Subramanian MT"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#05070a]/40 via-transparent to-transparent opacity-60">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-[#0f172a]">Smt. Nabeesa PV</h4>
+                                <p class="text-blue-400 text-sm font-medium uppercase tracking-widest mt-1">Board of
+                                    Directors
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Director4 -->
+                    <div class="group relative w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.666rem)]"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 group-hover:border-blue-500/50 transition-all duration-500">
+                            <div
+                                class="relative overflow-hidden rounded-full mb-6 w-48 h-48 mx-auto bg-gray-800 border-4 border-slate-100">
+                                <img src="assets/team/BOD6.webp" alt="Sri. Subramanian MT"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#05070a]/40 via-transparent to-transparent opacity-60">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-2xl font-bold text-[#0f172a]">Sri. Abdul Razack</h4>
+                                <p class="text-blue-400 text-sm font-medium uppercase tracking-widest mt-1">Board of
+                                    Directors
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- cordinator -->
+                    <div class="group relative w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.666rem)]"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 group-hover:border-blue-500/50 transition-all duration-500">
+                            <div
+                                class="relative overflow-hidden rounded-full mb-6 w-48 h-48 mx-auto bg-gray-800 border-4 border-slate-100">
+                                <img src="assets/team/BOD1.webp" alt="Sri. Subramanian MT"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#05070a]/40 via-transparent to-transparent opacity-60">
@@ -194,22 +406,16 @@
                             </div>
                             <div class="text-center">
                                 <h4 class="text-2xl font-bold text-[#0f172a]">Sri. Pratheesh Mullakkara</h4>
-                                <p class="text-blue-400 text-sm font-medium uppercase tracking-widest mt-1">Secretary
+                                <p class="text-blue-400 text-sm font-medium uppercase tracking-widest mt-1">Cordinator
                                 </p>
-                                <div class="flex justify-center gap-4 mt-6">
-                                    <a href="#" class="text-slate-400 hover:text-[#0f172a] transition-colors text-xl"><i
-                                            class="bi bi-linkedin"></i></a>
-                                    <a href="#" class="text-slate-400 hover:text-[#0f172a] transition-colors text-xl"><i
-                                            class="bi bi-github"></i></a>
-                                    <a href="mailto:info@pravasisit.com"
-                                        class="text-slate-400 hover:text-[#0f172a] transition-colors text-xl"><i
-                                            class="bi bi-envelope"></i></a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="group relative" data-aos="fade-up" data-aos-delay="200">
+                    <!-- CEO -->
+                    <div class="group relative w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.666rem)]"
+                        data-aos="fade-up" data-aos-delay="200">
                         <div
                             class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 group-hover:border-blue-500/50 transition-all duration-500">
                             <div
@@ -222,15 +428,60 @@
                             </div>
                             <div class="text-center">
                                 <h4 class="text-2xl font-bold text-[#0f172a]">Sri. Subramanian MT</h4>
-                                <p class="text-blue-400 text-sm font-medium uppercase tracking-widest mt-1">Manager(CEO)
+                                <p class="text-blue-400 text-sm font-medium uppercase tracking-widest mt-1">CEO
                                 </p>
-                                <div class="flex justify-center gap-4 mt-6">
-                                    <a href="#" class="text-slate-400 hover:text-[#0f172a] transition-colors text-xl"><i
-                                            class="bi bi-linkedin"></i></a>
-                                    <a href="#" class="text-slate-400 hover:text-[#0f172a] transition-colors text-xl"><i
-                                            class="bi bi-twitter-x"></i></a>
-                                </div>
+
                             </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Departments Section -->
+        <section id="departments" class="py-24 bg-slate-50 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-blue-500 font-bold uppercase tracking-widest text-xs">Our Departments</span>
+                    <h2 class="text-4xl md:text-6xl font-extrabold text-[#0f172a] tracking-tight mt-2">The Teams Behind PITS</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Development Team -->
+                    <div class="group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-72 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Development Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-[#0f172a] mb-2">Development Team</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">The brilliant minds engineering robust, secure, and scalable solutions for our clients.</p>
+                        </div>
+                    </div>
+
+                    <!-- Support Team -->
+                    <div class="group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-slate-100" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-72 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop" alt="Support Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-[#0f172a] mb-2">Support Team</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Always available and dedicated to providing seamless 24/7 assistance to our partners.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accounting Team -->
+                    <div class="group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-slate-100" data-aos="fade-up" data-aos-delay="300">
+                        <div class="h-72 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1554200876-56c2f25224fa?q=80&w=800&auto=format&fit=crop" alt="Accounting Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-[#0f172a] mb-2">Accounting Team</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Ensuring precision, compliance, and flawless financial operations every single day.</p>
                         </div>
                     </div>
 
