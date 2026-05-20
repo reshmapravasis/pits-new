@@ -1,12 +1,13 @@
-<nav id="main-nav" class="fixed w-full z-50 top-6 px-6 pointer-events-auto transition-transform duration-500">
+<nav id="main-nav" class="fixed w-full z-50 top-4 md:top-6 px-4 md:px-6 pointer-events-auto transition-transform duration-500">
     <div
-        class="max-w-6xl mx-auto glass rounded-full px-8 py-4 flex justify-between items-center border border-slate-200 shadow-2xl">
+        class="relative max-w-6xl mx-auto glass rounded-[2rem] md:rounded-full px-5 py-3 md:px-8 md:py-4 flex justify-between items-center border border-slate-200 shadow-2xl">
+        
+        <!-- Mobile Left Spacer for justify-between -->
+        <div class="md:hidden w-10"></div>
 
-        <a href="index.html" class="flex items-center gap-3 group">
+        <a href="index.html" class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center gap-3 group">
             <img src="assets/img/pits_logo.png" alt="Pravasis IT Solutions Logo"
-                class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
-
-
+                class="h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105">
         </a>
 
         <div class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest items-center">
@@ -203,8 +204,8 @@
 
         <button id="mobile-menu-btn"
             onclick="document.getElementById('mobile-menu').classList.remove('hidden'); document.getElementById('mobile-menu').classList.add('flex'); setTimeout(() => document.getElementById('mobile-menu').classList.remove('translate-x-full'), 10);"
-            class="md:hidden text-[#0f172a]">
-            <i class="bi bi-list text-2xl"></i>
+            class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#0f172a] transition-all">
+            <i class="bi bi-list text-2xl leading-none"></i>
         </button>
     </div>
 </nav>

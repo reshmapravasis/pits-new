@@ -56,14 +56,14 @@
             <div class="absolute inset-0 z-0 bg-white">
                 <div class="absolute inset-y-0 right-0 w-full lg:w-[85%]">
                     <img src="assets/img/hero1.png" alt="PITS Tech Partners"
-                        class="w-full h-full object-cover object-right lg:object-center">
+                        class="w-full h-full object-cover object-center">
                 </div>
                 <!-- Overlay for depth and text contrast -->
                 <div
-                    class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent w-full lg:w-[60%] z-10">
+                    class="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-transparent md:from-white md:via-white/80 md:to-transparent w-full lg:w-[60%] z-10">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10"></div>
-                <div class="absolute inset-0 bg-white/20 backdrop-blur-[2px] z-10"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-white/90 via-white/50 to-transparent md:from-white md:via-white/40 z-10"></div>
+                <div class="absolute inset-0 bg-white/5 md:bg-white/20 backdrop-blur-none md:backdrop-blur-[2px] z-10"></div>
             </div>
 
             <!-- Content positioned at the bottom -->
@@ -73,9 +73,9 @@
                         data-aos="fade-right">
                         <span class="text-blue-500 font-bold tracking-widest text-xs uppercase"></span>
                     </div> -->
-                    <h1 class="text-6xl md:text-8xl font-extrabold text-[#0f172a] tracking-tight leading-[0.9] mb-8"
+                    <h1 class="text-5xl md:text-8xl font-extrabold text-[#0f172a] tracking-tight leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 text-center md:text-left"
                         data-aos="fade-right" data-aos-delay="100">
-                        Trusted Tech Partner <br><span class="heading-accent text-emerald-600">for 500+
+                        Trusted Tech Partner <br class="hidden md:block"><span class="heading-accent text-emerald-600">for 500+
                             businesses</span>
                     </h1>
                     <!-- <p class="text-slate-500 max-w-2xl text-base md:text-lg leading-relaxed mb-12" data-aos="fade-right"
@@ -83,7 +83,7 @@
                         AI-Assisted product development partner for 500+ businesses
 
                     </p> -->
-                    <div class="flex gap-6 ml-[65px] md:ml-[210px] lg:ml-[250px]" data-aos="fade-up"
+                    <div class="flex gap-6 mt-6 md:mt-0 md:ml-[210px] lg:ml-[250px] justify-center md:justify-start" data-aos="fade-up"
                         data-aos-delay="300">
                         <button onclick="location.href='products.html'"
                             class="bg-blue-600 px-7 py-2.5 rounded-full font-bold text-white hover:bg-blue-500 transition shadow-lg shadow-blue-900/30 text-base">
@@ -122,6 +122,8 @@
 
                             container.innerHTML = '';
 
+                            const isMobile = window.innerWidth < 768;
+
                             text.split(' ').forEach((word, wordIndex) => {
 
                                 const wordWrap = document.createElement('span');
@@ -135,30 +137,28 @@
                                     isHighlight = false;
                                 }
 
-                                word.split('').forEach((char, index) => {
-
-                                    const span = document.createElement('span');
-
-                                    span.className = `
-                                        letter
-                                        inline-block
-                                        transition-all
-                                        duration-300
-                                        ease-out
-                                        will-change-transform
-                                        ${isHighlight ? 'text-blue-600 font-bold' : 'text-slate-800'}
-                                    `;
-
-                                    span.dataset.index = index;
-
-                                    span.textContent = char;
-
-                                    wordWrap.appendChild(span);
-
-                                });
-
-                                container.appendChild(wordWrap);
-
+                                if (isMobile) {
+                                    wordWrap.className += isHighlight ? ' text-blue-600 font-bold' : ' text-slate-800';
+                                    wordWrap.textContent = word;
+                                    container.appendChild(wordWrap);
+                                } else {
+                                    word.split('').forEach((char, index) => {
+                                        const span = document.createElement('span');
+                                        span.className = `
+                                            letter
+                                            inline-block
+                                            transition-all
+                                            duration-300
+                                            ease-out
+                                            will-change-transform
+                                            ${isHighlight ? 'text-blue-600 font-bold' : 'text-slate-800'}
+                                        `;
+                                        span.dataset.index = index;
+                                        span.textContent = char;
+                                        wordWrap.appendChild(span);
+                                    });
+                                    container.appendChild(wordWrap);
+                                }
                             });
 
                             const letters = document.querySelectorAll('.letter');
