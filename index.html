@@ -55,15 +55,18 @@
             <!-- Full Screen Background Image -->
             <div class="absolute inset-0 z-0 bg-white">
                 <div class="absolute inset-y-0 right-0 w-full lg:w-[85%]">
-                    <img src="assets/img/hero1.png" alt="PITS Tech Partners"
+                    <img src="assets/img/line_vector_hero.png" alt="PITS Tech Partners"
                         class="w-full h-full object-cover object-center">
                 </div>
                 <!-- Overlay for depth and text contrast -->
                 <div
                     class="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-transparent md:from-white md:via-white/80 md:to-transparent w-full lg:w-[60%] z-10">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-white/90 via-white/50 to-transparent md:from-white md:via-white/40 z-10"></div>
-                <div class="absolute inset-0 bg-white/5 md:bg-white/20 backdrop-blur-none md:backdrop-blur-[2px] z-10"></div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-white/90 via-white/50 to-transparent md:from-white md:via-white/40 z-10">
+                </div>
+                <div class="absolute inset-0 bg-white/5 md:bg-white/20 backdrop-blur-none md:backdrop-blur-[2px] z-10">
+                </div>
             </div>
 
             <!-- Content positioned at the bottom -->
@@ -75,7 +78,8 @@
                     </div> -->
                     <h1 class="text-5xl md:text-8xl font-extrabold text-[#0f172a] tracking-tight leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 text-center md:text-left"
                         data-aos="fade-right" data-aos-delay="100">
-                        Trusted Tech Partner <br class="hidden md:block"><span class="heading-accent text-emerald-600">for 500+
+                        Trusted Tech Partner <br class="hidden md:block"><span
+                            class="heading-accent text-emerald-600">for 500+
                             businesses</span>
                     </h1>
                     <!-- <p class="text-slate-500 max-w-2xl text-base md:text-lg leading-relaxed mb-12" data-aos="fade-right"
@@ -83,8 +87,8 @@
                         AI-Assisted product development partner for 500+ businesses
 
                     </p> -->
-                    <div class="flex gap-6 mt-6 md:mt-0 md:ml-[210px] lg:ml-[250px] justify-center md:justify-start" data-aos="fade-up"
-                        data-aos-delay="300">
+                    <div class="flex gap-6 mt-6 md:mt-0 md:ml-[210px] lg:ml-[250px] justify-center md:justify-start"
+                        data-aos="fade-up" data-aos-delay="300">
                         <button onclick="location.href='products.html'"
                             class="bg-blue-600 px-7 py-2.5 rounded-full font-bold text-white hover:bg-blue-500 transition shadow-lg shadow-blue-900/30 text-base">
                             Explore Our Ecosystem
@@ -109,125 +113,94 @@
             <div class="max-w-7xl mx-auto flex flex-col gap-16">
                 <div data-aos="fade-up" class="max-w-6xl mx-auto text-center w-full">
                     <h2 id="scroll-reveal-text"
-                        class="text-4xl md:text-6xl lg:text-[4.5rem] leading-[1.15] font-light tracking-tight text-center select-none">
+                        class="text-4xl md:text-6xl lg:text-[4.5rem] leading-[1.15] font-light tracking-tight text-center">
                     </h2>
                     <script>
                         document.addEventListener('DOMContentLoaded', () => {
 
                             const container = document.getElementById('scroll-reveal-text');
 
-                            const text = "For over 10 years, we’ve helped 500+ businesses run more smoothly with reliable technology. From ERP systems to fintech infrastructure, we build products that businesses rely on every day.";
+                            const text =
+                                "For over 10 years, we’ve helped 500+ businesses run more smoothly with reliable technology solutions that businesses rely on every day.";
 
-                            const highlightWords = ['500+', 'businesses', 'reliable', 'technology', 'ERP', 'systems', 'fintech'];
+                            const highlightWords = [
+                                '500+',
+                                'businesses',
+                                'reliable',
+                                'technology'
+                            ];
 
                             container.innerHTML = '';
 
-                            const isMobile = window.innerWidth < 768;
-
-                            text.split(' ').forEach((word, wordIndex) => {
+                            // CREATE LETTERS
+                            text.split(' ').forEach((word) => {
 
                                 const wordWrap = document.createElement('span');
-                                wordWrap.className = 'inline-block mr-[0.35em]';
+                                wordWrap.className = 'inline-block mr-[0.3em]';
 
                                 const cleanWord = word.replace(/[.,]/g, '');
-                                let isHighlight = highlightWords.includes(cleanWord);
+                                const isHighlight = highlightWords.includes(cleanWord);
 
-                                // Only highlight the first 'businesses' (which is at index 7)
-                                if (cleanWord === 'businesses' && wordIndex !== 7) {
-                                    isHighlight = false;
-                                }
+                                word.split('').forEach((char) => {
 
-                                if (isMobile) {
-                                    wordWrap.className += isHighlight ? ' text-blue-600 font-bold' : ' text-slate-800';
-                                    wordWrap.textContent = word;
-                                    container.appendChild(wordWrap);
-                                } else {
-                                    word.split('').forEach((char, index) => {
-                                        const span = document.createElement('span');
-                                        span.className = `
-                                            letter
-                                            inline-block
-                                            transition-all
-                                            duration-300
-                                            ease-out
-                                            will-change-transform
-                                            ${isHighlight ? 'text-blue-600 font-bold' : 'text-slate-800'}
-                                        `;
-                                        span.dataset.index = index;
-                                        span.textContent = char;
-                                        wordWrap.appendChild(span);
-                                    });
-                                    container.appendChild(wordWrap);
-                                }
+                                    const span = document.createElement('span');
+
+                                    span.className = `
+                                        letter
+                                        inline-block
+                                        transition-all
+                                        duration-300
+                                        ease-out
+                                        ${isHighlight
+                                            ? 'text-blue-600 font-semibold'
+                                            : 'text-slate-800'
+                                        }
+                                    `;
+
+                                    span.dataset.highlight = isHighlight ? 'true' : 'false';
+
+                                    span.textContent = char;
+
+                                    wordWrap.appendChild(span);
+                                });
+
+                                container.appendChild(wordWrap);
                             });
 
                             const letters = document.querySelectorAll('.letter');
 
-                            let scrollY = window.scrollY;
-
-                            // MOUSE EFFECT
-                            document.addEventListener('mousemove', (e) => {
-
-                                letters.forEach((letter, i) => {
-
-                                    const rect = letter.getBoundingClientRect();
-
-                                    const x = rect.left + rect.width / 2;
-                                    const y = rect.top + rect.height / 2;
-
-                                    const distance = Math.hypot(
-                                        e.clientX - x,
-                                        e.clientY - y
-                                    );
-
-                                    const maxDistance = 140;
-
-                                    if (distance < maxDistance) {
-
-                                        const intensity = 1 - distance / maxDistance;
-
-                                        const moveX = (x - e.clientX) * 0.06 * intensity;
-                                        const moveY = (y - e.clientY) * 0.06 * intensity;
-
-                                        const scrollWave = Math.sin((scrollY * 0.01) + i * 0.3) * 8;
-
-                                        letter.style.transform = `
-                                            translate(${moveX}px, ${moveY + scrollWave}px)
-                                            scale(${1 + intensity * 0.35})
-                                            rotate(${moveX * 0.08}deg)
-                                        `;
-
-                                        letter.style.filter = `
-                                            brightness(${1 + intensity * 0.5})
-                                        `;
-
-                                    } else {
-
-                                        const scrollWave = Math.sin((scrollY * 0.01) + i * 0.3) * 8;
-
-                                        letter.style.transform = `
-                                            translateY(${scrollWave}px)
-                                        `;
-
-                                        letter.style.filter = 'brightness(1)';
-                                    }
-
-                                });
-
-                            });
+                            let lastScroll = window.scrollY;
 
                             // SCROLL EFFECT
                             window.addEventListener('scroll', () => {
 
-                                scrollY = window.scrollY;
+                                const currentScroll = window.scrollY;
 
-                                letters.forEach((letter, i) => {
+                                const scrollingDown = currentScroll > lastScroll;
 
-                                    const wave = Math.sin((scrollY * 0.015) + i * 0.25) * 10;
+                                lastScroll = currentScroll;
 
-                                    letter.style.transform = `
-                                        translateY(${wave}px)
-                                    `;
+                                letters.forEach((letter, index) => {
+
+                                    const delay = scrollingDown
+                                        ? index * 15
+                                        : (letters.length - index) * 15;
+
+                                    setTimeout(() => {
+
+                                        if (scrollingDown) {
+
+                                            // Fade color LEFT -> RIGHT
+                                            letter.style.opacity = '0.25';
+
+                                        } else {
+
+                                            // Restore color RIGHT -> LEFT
+                                            letter.style.opacity = '1';
+
+                                        }
+
+                                    }, delay);
 
                                 });
 
@@ -244,108 +217,31 @@
                     </a>
                 </div>
 
-                <!-- Scrolling Logos Grid -->
-                <div class="overflow-hidden relative w-full mt-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="animate-marquee flex gap-6 hover:![animation-play-state:paused] py-4">
-                        <!-- Original Set -->
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client1.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client2.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client3.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client4.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client5.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client6.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client7.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client8.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-
-                        <!-- Duplicated Set for infinite scroll -->
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client1.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client2.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client3.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client4.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client5.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client6.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client7.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
-                        <div
-                            class="w-[280px] md:w-[350px] shrink-0 bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                            <img src="assets/Logo/Client8.webp"
-                                class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                                alt="Client">
-                        </div>
+                <!-- Static Logos Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mt-4" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-full bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                        <img src="assets/Logo/Client1.webp"
+                            class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                            alt="Client">
+                    </div>
+                    <div
+                        class="w-full bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                        <img src="assets/Logo/Client2.webp"
+                            class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                            alt="Client">
+                    </div>
+                    <div
+                        class="w-full bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                        <img src="assets/Logo/Client3.webp"
+                            class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                            alt="Client">
+                    </div>
+                    <div
+                        class="w-full bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
+                        <img src="assets/Logo/Client4.webp"
+                            class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                            alt="Client">
                     </div>
                 </div>
 
