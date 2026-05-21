@@ -106,104 +106,80 @@
                     <h2 class="text-4xl md:text-5xl font-bold text-[#0f172a] tracking-tight">Our values</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 w-full mt-10">
+                <!-- Accordion Cards Container -->
+                <div class="values-accordion" id="valuesAccordion">
 
-                    <!-- Card 1 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="0">
-                        <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                            <!-- Front -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] bg-[#f8fafc] rounded-3xl p-6 flex flex-col items-center justify-center border border-slate-100 shadow-sm">
-                                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6 text-blue-600 text-3xl">
-                                    <i class="bi bi-shield-check"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-800 text-center">Integrity</h3>
+                    <!-- Card 1: Integrity (expanded by default) -->
+                    <div class="val-card val-card--active" id="val-integrity">
+                        <div class="val-card__bg" style="background: linear-gradient(160deg,#0f2942 0%,#1a4a7a 60%,#1e6fb5 100%);"></div>
+                        <div class="val-card__overlay"></div>
+                        <div class="val-card__content">
+                            <div class="val-card__icon">
+                                <i class="bi bi-shield-check"></i>
                             </div>
-                            <!-- Back -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-blue-600 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-lg">
-                                <h3 class="text-xl font-bold text-white mb-4">Integrity</h3>
-                                <p class="text-blue-50 text-sm leading-relaxed">
-                                    Maintaining the highest security standards for financial data.
-                                </p>
+                            <div class="val-card__text">
+                                <h3 class="val-card__title">Integrity</h3>
+                                <p class="val-card__desc">Be true to yourself, your colleagues and to your customers. We uphold the highest ethical standards in every line of code we ship.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="100">
-                        <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                            <!-- Front -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] bg-[#f8fafc] rounded-3xl p-6 flex flex-col items-center justify-center border border-slate-100 shadow-sm">
-                                <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mb-6 text-emerald-600 text-3xl">
-                                    <i class="bi bi-lightbulb"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-800 text-center">Innovation</h3>
+                    <!-- Card 2: Innovation -->
+                    <div class="val-card" id="val-innovation">
+                        <div class="val-card__bg" style="background: linear-gradient(160deg,#0a2a1e 0%,#0f5c35 60%,#17a362 100%);"></div>
+                        <div class="val-card__overlay"></div>
+                        <div class="val-card__content">
+                            <div class="val-card__icon">
+                                <i class="bi bi-lightbulb"></i>
                             </div>
-                            <!-- Back -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-emerald-600 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-lg">
-                                <h3 class="text-xl font-bold text-white mb-4">Innovation</h3>
-                                <p class="text-emerald-50 text-sm leading-relaxed">
-                                    Pioneering AI-assisted technologies for tomorrow.
-                                </p>
+                            <div class="val-card__text">
+                                <h3 class="val-card__title">Innovation</h3>
+                                <p class="val-card__desc">Innovate to create the best product — meeting customers' needs in a novel way. We pioneer AI-assisted technologies for tomorrow.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="200">
-                        <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                            <!-- Front -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] bg-[#f8fafc] rounded-3xl p-6 flex flex-col items-center justify-center border border-slate-100 shadow-sm">
-                                <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-6 text-purple-600 text-3xl">
-                                    <i class="bi bi-cpu"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-800 text-center">AI-Driven</h3>
+                    <!-- Card 3: AI-Driven -->
+                    <div class="val-card" id="val-aidriven">
+                        <div class="val-card__bg" style="background: linear-gradient(160deg,#1a0a2e 0%,#3d1278 60%,#6b21c8 100%);"></div>
+                        <div class="val-card__overlay"></div>
+                        <div class="val-card__content">
+                            <div class="val-card__icon">
+                                <i class="bi bi-cpu"></i>
                             </div>
-                            <!-- Back -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-purple-600 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-lg">
-                                <h3 class="text-xl font-bold text-white mb-4">AI-Driven</h3>
-                                <p class="text-purple-50 text-sm leading-relaxed">
-                                    Leveraging machine learning to simplify banking processes.
-                                </p>
+                            <div class="val-card__text">
+                                <h3 class="val-card__title">AI-Driven</h3>
+                                <p class="val-card__desc">Harnessing machine learning and intelligent automation to simplify complex financial and banking processes for our clients.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 4 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="300">
-                        <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                            <!-- Front -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] bg-[#f8fafc] rounded-3xl p-6 flex flex-col items-center justify-center border border-slate-100 shadow-sm">
-                                <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-6 text-orange-500 text-3xl">
-                                    <i class="bi bi-headset"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-800 text-center">Support</h3>
+                    <!-- Card 4: Support -->
+                    <div class="val-card" id="val-support">
+                        <div class="val-card__bg" style="background: linear-gradient(160deg,#2a1200 0%,#7c3100 60%,#d16000 100%);"></div>
+                        <div class="val-card__overlay"></div>
+                        <div class="val-card__content">
+                            <div class="val-card__icon">
+                                <i class="bi bi-headset"></i>
                             </div>
-                            <!-- Back -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-orange-500 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-lg">
-                                <h3 class="text-xl font-bold text-white mb-4">Support</h3>
-                                <p class="text-orange-50 text-sm leading-relaxed">
-                                    Providing exceptional, 24/7 continuous assistance.
-                                </p>
+                            <div class="val-card__text">
+                                <h3 class="val-card__title">Support</h3>
+                                <p class="val-card__desc">Providing exceptional, round-the-clock assistance. Our dedicated support team ensures your operations never skip a beat.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 5 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="400">
-                        <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                            <!-- Front -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] bg-[#f8fafc] rounded-3xl p-6 flex flex-col items-center justify-center border border-slate-100 shadow-sm">
-                                <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mb-6 text-red-500 text-3xl">
-                                    <i class="bi bi-people"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-800 text-center">Success Clients</h3>
+                    <!-- Card 5: Success Clients -->
+                    <div class="val-card" id="val-clients">
+                        <div class="val-card__bg" style="background: linear-gradient(160deg,#2a0a0a 0%,#7c1010 60%,#c41c1c 100%);"></div>
+                        <div class="val-card__overlay"></div>
+                        <div class="val-card__content">
+                            <div class="val-card__icon">
+                                <i class="bi bi-people"></i>
                             </div>
-                            <!-- Back -->
-                            <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-red-500 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-lg">
-                                <h3 class="text-xl font-bold text-white mb-4">Success Clients</h3>
-                                <p class="text-red-50 text-sm leading-relaxed">
-                                    Delivering Solutions That Ensure Customer Success.
-                                </p>
+                            <div class="val-card__text">
+                                <h3 class="val-card__title">Client Success</h3>
+                                <p class="val-card__desc">Delivering solutions that ensure customer success. Over 500+ institutions trust PITS to power their digital transformation.</p>
                             </div>
                         </div>
                     </div>
@@ -211,6 +187,152 @@
                 </div>
             </div>
         </section>
+
+        <style>
+            /* ── Values Accordion ─────────────────────────────── */
+            .values-accordion {
+                display: flex;
+                gap: 12px;
+                height: 420px;
+                width: 100%;
+            }
+
+            .val-card {
+                position: relative;
+                flex: 1;                        /* collapsed = equal share */
+                border-radius: 20px;
+                overflow: hidden;
+                cursor: pointer;
+                transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            /* Active card gets the wide slot */
+            .val-card--active {
+                flex: 4.5;
+            }
+
+            /* dark overlay so text stays readable */
+            .val-card__bg {
+                position: absolute;
+                inset: 0;
+                transition: transform 0.6s ease;
+            }
+            .val-card:hover .val-card__bg {
+                transform: scale(1.04);
+            }
+
+            .val-card__overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+            }
+
+            /* Content sits at the bottom */
+            .val-card__content {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 28px 24px;
+                color: #fff;
+            }
+
+            /* Icon — centered vertically for collapsed cards */
+            .val-card__icon {
+                font-size: 2.2rem;
+                margin-bottom: 12px;
+                opacity: 0.9;
+                transition: transform 0.4s ease;
+            }
+            .val-card:hover .val-card__icon,
+            .val-card--active .val-card__icon {
+                transform: scale(1.1);
+            }
+
+            /* Title always visible */
+            .val-card__title {
+                font-size: 1.15rem;
+                font-weight: 700;
+                white-space: nowrap;
+                margin-bottom: 8px;
+                letter-spacing: 0.01em;
+            }
+
+            /* Description: hidden when collapsed, visible when active */
+            .val-card__desc {
+                font-size: 0.85rem;
+                line-height: 1.6;
+                color: rgba(255,255,255,0.85);
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: max-height 0.5s ease, opacity 0.4s ease 0.1s;
+            }
+
+            .val-card--active .val-card__desc {
+                max-height: 120px;
+                opacity: 1;
+            }
+
+            /* On collapsed cards, center the icon+title vertically */
+            .val-card:not(.val-card--active) .val-card__content {
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            .val-card:not(.val-card--active) .val-card__icon {
+                margin-bottom: 8px;
+            }
+
+            /* Responsive: stack vertically on mobile */
+            @media (max-width: 768px) {
+                .values-accordion {
+                    flex-direction: column;
+                    height: auto;
+                }
+                .val-card {
+                    height: 80px;
+                    flex: none;
+                    border-radius: 16px;
+                }
+                .val-card--active {
+                    height: 320px;
+                    flex: none;
+                }
+                .val-card:not(.val-card--active) .val-card__content {
+                    flex-direction: row;
+                    gap: 12px;
+                    padding: 0 20px;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+                .val-card:not(.val-card--active) .val-card__icon {
+                    margin-bottom: 0;
+                    font-size: 1.5rem;
+                }
+                .val-card:not(.val-card--active) .val-card__title {
+                    margin-bottom: 0;
+                    font-size: 1rem;
+                }
+            }
+        </style>
+
+        <script>
+            (function () {
+                const cards = document.querySelectorAll('#valuesAccordion .val-card');
+
+                cards.forEach(function (card) {
+                    card.addEventListener('mouseenter', function () {
+                        cards.forEach(function (c) { c.classList.remove('val-card--active'); });
+                        card.classList.add('val-card--active');
+                    });
+                });
+
+                // When mouse leaves the whole accordion, keep last hovered active
+                // (first card is active by default on load — no extra JS needed)
+            })();
+        </script>
 
         <section id="team" class="py-24 px-6">
             <div class="max-w-7xl mx-auto">
