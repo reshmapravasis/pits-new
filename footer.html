@@ -88,13 +88,13 @@
 
 </footer>
 
-<!-- Custom Animated Cursor -->
+<!-- Custom Animated Cursor (Array.team Style) -->
 <div id="custom-cursor"
-    class="fixed top-0 left-0 w-8 h-8 border border-blue-400 rounded-full pointer-events-none z-[9999] transition-transform duration-100 ease-out flex items-center justify-center">
-    <div class="w-1 h-1 bg-blue-500 rounded-full"></div>
-</div>
-<div id="cursor-glow"
-    class="fixed top-0 left-0 w-64 h-64 bg-blue-400/10 rounded-full pointer-events-none z-[9998] blur-[80px] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-0">
+    class="fixed top-0 left-0 pointer-events-none z-[999999] hidden flex items-center justify-center rounded-full select-none"
+    style="width: 12px; height: 12px; background-color: #2563eb; transform: translate3d(0, 0, 0); transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, border 0.3s, opacity 0.2s;">
+    <!-- Inner Elements -->
+    <span class="cursor-text text-[11px] font-extrabold tracking-widest text-white uppercase opacity-0 transition-opacity duration-300 whitespace-nowrap"></span>
+    <i class="cursor-icon bi text-lg text-white opacity-0 transition-opacity duration-300"></i>
 </div>
 
 <!-- AI Chatbot UI -->
@@ -188,8 +188,12 @@
         button,
         input,
         select,
-        textarea {
-            cursor: none;
+        textarea,
+        .cursor-pointer,
+        [role="button"],
+        .swiper-button-next,
+        .swiper-button-prev {
+            cursor: none !important;
         }
     }
 </style>
@@ -244,40 +248,124 @@
             return "As your PITS Gemini AI assistant, I can help you explore our enterprise digital frameworks. What specific area of your operations should we modernize first?";
         }
 
-        // Custom Cursor Logic
+        // Custom Animated Cursor (Array.team Lerp trailing Style)
         const cursor = document.getElementById('custom-cursor');
-        const glow = document.getElementById('cursor-glow');
+        const cursorRing = document.getElementById('cursor-ring');
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorText = cursor.querySelector('.cursor-text');
+        const cursorIcon = cursor.querySelector('.cursor-icon');
+
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let hasMoved = false;
+
+        const lerp = (a, b, n) => (1 - n) * a + n * b;
 
         document.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-
-            cursor.style.transform = `translate(${x - 16}px, ${y - 16}px)`;
-            glow.style.left = `${x}px`;
-            glow.style.top = `${y}px`;
-            glow.style.opacity = '1';
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            if (!hasMoved) {
+                cursorX = mouseX;
+                cursorY = mouseY;
+                hasMoved = true;
+                cursor.classList.remove('hidden');
+            }
         });
 
         document.addEventListener('mouseleave', () => {
-            glow.style.opacity = '0';
+            cursor.style.opacity = '0';
         });
 
-        // Interactive Element Effects
-        const interactives = document.querySelectorAll('a, button, input, .card-ultra-rounded');
-        interactives.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.width = '64px';
-                cursor.style.height = '64px';
-                cursor.style.transform = `translate(${parseFloat(cursor.style.transform.split('(')[1]) - 16}px, ${parseFloat(cursor.style.transform.split(',')[1]) - 16}px)`;
-                cursor.style.borderColor = 'rgba(59, 130, 246, 0.4)';
-                cursor.style.backgroundColor = 'rgba(59, 130, 246, 0.05)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.width = '32px';
-                cursor.style.height = '32px';
-                cursor.style.borderColor = 'rgba(96, 165, 250, 1)';
-                cursor.style.backgroundColor = 'transparent';
-            });
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '1';
+        });
+
+        // smooth trailing animation loop
+        function updatePosition() {
+            if (hasMoved) {
+                cursorX = lerp(cursorX, mouseX, 0.15);
+                cursorY = lerp(cursorY, mouseY, 0.15);
+                cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+            }
+            requestAnimationFrame(updatePosition);
+        }
+        requestAnimationFrame(updatePosition);
+
+        // Hover Effect using event delegation
+        document.addEventListener('mouseover', (e) => {
+            const target = e.target.closest('a, button, input, select, textarea, [data-cursor-text], [data-cursor-icon], .cursor-pointer, [role="button"], .val-card, .menu-toggle');
+            
+            if (target) {
+                // Special Text Hover
+                if (target.hasAttribute('data-cursor-text')) {
+                    const text = target.getAttribute('data-cursor-text');
+                    
+                    cursor.style.width = '80px';
+                    cursor.style.height = '80px';
+                    cursor.style.backgroundColor = '#2563eb';
+                    
+                    cursorDot.classList.remove('scale-100');
+                    cursorDot.classList.add('scale-0');
+                    
+                    cursorRing.classList.remove('opacity-100', 'scale-100');
+                    cursorRing.classList.add('opacity-0', 'scale-50');
+                    
+                    cursorText.textContent = text;
+                    cursorText.classList.remove('opacity-0');
+                    cursorText.classList.add('opacity-100');
+                } 
+                // Special Icon Hover
+                else if (target.hasAttribute('data-cursor-icon')) {
+                    const iconClass = target.getAttribute('data-cursor-icon');
+                    
+                    cursor.style.width = '80px';
+                    cursor.style.height = '80px';
+                    cursor.style.backgroundColor = '#2563eb';
+                    
+                    cursorDot.classList.remove('scale-100');
+                    cursorDot.classList.add('scale-0');
+                    
+                    cursorRing.classList.remove('opacity-100', 'scale-100');
+                    cursorRing.classList.add('opacity-0', 'scale-50');
+                    
+                    cursorIcon.className = `cursor-icon bi ${iconClass} opacity-100`;
+                } 
+                // Standard interactive link hover
+                else {
+                    cursor.style.width = '60px';
+                    cursor.style.height = '60px';
+                    cursor.style.backgroundColor = 'rgba(37, 99, 235, 0.05)';
+                    
+                    cursorDot.classList.remove('scale-100');
+                    cursorDot.classList.add('scale-0');
+                    
+                    cursorRing.classList.remove('opacity-0', 'scale-50');
+                    cursorRing.classList.add('opacity-100', 'scale-100');
+                }
+            }
+        });
+
+        document.addEventListener('mouseout', (e) => {
+            const target = e.target.closest('a, button, input, select, textarea, [data-cursor-text], [data-cursor-icon], .cursor-pointer, [role="button"], .val-card, .menu-toggle');
+            
+            if (target) {
+                // Restore default dot
+                cursor.style.width = '12px';
+                cursor.style.height = '12px';
+                cursor.style.backgroundColor = '#2563eb';
+                
+                cursorDot.classList.remove('scale-0');
+                cursorDot.classList.add('scale-100');
+                
+                cursorRing.classList.remove('opacity-100', 'scale-100');
+                cursorRing.classList.add('opacity-0', 'scale-50');
+                
+                cursorText.classList.remove('opacity-100');
+                cursorText.classList.add('opacity-0');
+                
+                cursorIcon.className = 'cursor-icon bi opacity-0';
+            }
         });
     })();
 </script>
