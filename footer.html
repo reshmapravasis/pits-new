@@ -250,8 +250,6 @@
 
         // Custom Animated Cursor (Array.team Lerp trailing Style)
         const cursor = document.getElementById('custom-cursor');
-        const cursorRing = document.getElementById('cursor-ring');
-        const cursorDot = document.getElementById('cursor-dot');
         const cursorText = cursor.querySelector('.cursor-text');
         const cursorIcon = cursor.querySelector('.cursor-icon');
 
@@ -304,12 +302,7 @@
                     cursor.style.width = '80px';
                     cursor.style.height = '80px';
                     cursor.style.backgroundColor = '#2563eb';
-                    
-                    cursorDot.classList.remove('scale-100');
-                    cursorDot.classList.add('scale-0');
-                    
-                    cursorRing.classList.remove('opacity-100', 'scale-100');
-                    cursorRing.classList.add('opacity-0', 'scale-50');
+                    cursor.style.border = '0px solid transparent';
                     
                     cursorText.textContent = text;
                     cursorText.classList.remove('opacity-0');
@@ -322,12 +315,7 @@
                     cursor.style.width = '80px';
                     cursor.style.height = '80px';
                     cursor.style.backgroundColor = '#2563eb';
-                    
-                    cursorDot.classList.remove('scale-100');
-                    cursorDot.classList.add('scale-0');
-                    
-                    cursorRing.classList.remove('opacity-100', 'scale-100');
-                    cursorRing.classList.add('opacity-0', 'scale-50');
+                    cursor.style.border = '0px solid transparent';
                     
                     cursorIcon.className = `cursor-icon bi ${iconClass} opacity-100`;
                 } 
@@ -336,12 +324,7 @@
                     cursor.style.width = '60px';
                     cursor.style.height = '60px';
                     cursor.style.backgroundColor = 'rgba(37, 99, 235, 0.05)';
-                    
-                    cursorDot.classList.remove('scale-100');
-                    cursorDot.classList.add('scale-0');
-                    
-                    cursorRing.classList.remove('opacity-0', 'scale-50');
-                    cursorRing.classList.add('opacity-100', 'scale-100');
+                    cursor.style.border = '1.5px solid rgba(37, 99, 235, 0.5)';
                 }
             }
         });
@@ -354,12 +337,7 @@
                 cursor.style.width = '12px';
                 cursor.style.height = '12px';
                 cursor.style.backgroundColor = '#2563eb';
-                
-                cursorDot.classList.remove('scale-0');
-                cursorDot.classList.add('scale-100');
-                
-                cursorRing.classList.remove('opacity-100', 'scale-100');
-                cursorRing.classList.add('opacity-0', 'scale-50');
+                cursor.style.border = '0px solid transparent';
                 
                 cursorText.classList.remove('opacity-100');
                 cursorText.classList.add('opacity-0');

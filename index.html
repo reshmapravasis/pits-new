@@ -76,10 +76,10 @@
                         data-aos="fade-right">
                         <span class="text-blue-500 font-bold tracking-widest text-xs uppercase"></span>
                     </div> -->
-                    <h1 class="text-5xl md:text-8xl font-extrabold text-[#0f172a] tracking-tight leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 text-center md:text-left"
+                    <h1 class="text-3xl md:text-7xl font-extrabold text-[#0f172a] tracking-tight leading-[1.2] md:leading-[1.15] mb-6 md:mb-8 text-center md:text-left"
                         data-aos="fade-right" data-aos-delay="100">
-                        Trusted Tech Partner <br class="hidden md:block"><span
-                            class="heading-accent text-emerald-600">for 500+
+                        Trusted <span class="text-[#D6191D]">Tech Partner</span> <br class="hidden md:block">for<span
+                            class="text-[#01458C]"> 500+
                             businesses</span>
                     </h1>
                     <!-- <p class="text-slate-500 max-w-2xl text-base md:text-lg leading-relaxed mb-12" data-aos="fade-right"
@@ -89,7 +89,7 @@
                     </p> -->
                     <div class="flex gap-6 mt-6 md:mt-0 md:ml-[210px] lg:ml-[250px] justify-center md:justify-start"
                         data-aos="fade-up" data-aos-delay="300">
-                        <button onclick="location.href='products.html'"
+                        <button onclick="location.href='products.html'" data-cursor-text="EXPLORE"
                             class="bg-blue-600 px-7 py-2.5 rounded-full font-bold text-white hover:bg-blue-500 transition shadow-lg shadow-blue-900/30 text-base">
                             Explore Our Ecosystem
                         </button>
@@ -113,99 +113,82 @@
             <div class="max-w-7xl mx-auto flex flex-col gap-16">
                 <div data-aos="fade-up" class="max-w-6xl mx-auto text-center w-full">
                     <h2 id="scroll-reveal-text"
-                        class="text-4xl md:text-6xl lg:text-[4.5rem] leading-[1.15] font-light tracking-tight text-center">
+                        class="text-2xl md:text-5xl lg:text-[3.3rem] leading-[1.05] font-light tracking-[-2px] text-left text-slate-300 select-none">
                     </h2>
                     <script>
                         document.addEventListener('DOMContentLoaded', () => {
-
                             const container = document.getElementById('scroll-reveal-text');
+                            if (!container) return;
 
-                            const text =
-                                "For over 10 years, we’ve helped 500+ businesses run more smoothly with reliable technology solutions that businesses rely on every day.";
+                            const rawText = "For over 10 years, we’ve helped 500+ businesses run more smoothly with reliable technology. From ERP systems to fintech infrastructure, we build products that businesses rely on every day.";
+                            const words = rawText.split(' ');
 
-                            const highlightWords = [
-                                '500+',
-                                'businesses',
-                                'reliable',
-                                'technology'
-                            ];
+                            words.forEach((word, wordIdx) => {
+                                const wordSpan = document.createElement('span');
+                                wordSpan.className = 'inline-block mr-[0.35em]';
 
-                            container.innerHTML = '';
+                                const isBold = [6, 7, 12, 13, 15, 16, 17, 18, 19].includes(wordIdx);
 
-                            // CREATE LETTERS
-                            text.split(' ').forEach((word) => {
-
-                                const wordWrap = document.createElement('span');
-                                wordWrap.className = 'inline-block mr-[0.3em]';
-
-                                const cleanWord = word.replace(/[.,]/g, '');
-                                const isHighlight = highlightWords.includes(cleanWord);
-
-                                word.split('').forEach((char) => {
-
-                                    const span = document.createElement('span');
-
-                                    span.className = `
-                                        letter
-                                        inline-block
-                                        transition-all
-                                        duration-300
-                                        ease-out
-                                        ${isHighlight
-                                            ? 'text-blue-600 font-semibold'
-                                            : 'text-slate-800'
-                                        }
-                                    `;
-
-                                    span.dataset.highlight = isHighlight ? 'true' : 'false';
-
-                                    span.textContent = char;
-
-                                    wordWrap.appendChild(span);
+                                word.split('').forEach(char => {
+                                    const charSpan = document.createElement('span');
+                                    charSpan.className = `reveal-char text-slate-300 transition-colors duration-300 ${isBold ? 'font-bold' : ''}`;
+                                    charSpan.innerText = char;
+                                    wordSpan.appendChild(charSpan);
                                 });
 
-                                container.appendChild(wordWrap);
+                                container.appendChild(wordSpan);
                             });
 
-                            const letters = document.querySelectorAll('.letter');
+                            const chars = container.querySelectorAll('.reveal-char');
 
-                            let lastScroll = window.scrollY;
+                            let targetProgress = 0;
+                            let currentProgress = 0;
+                            let isAnimating = false;
 
-                            // SCROLL EFFECT
-                            window.addEventListener('scroll', () => {
+                            const updateScroll = () => {
+                                const rect = container.getBoundingClientRect();
+                                const windowHeight = window.innerHeight;
 
-                                const currentScroll = window.scrollY;
+                                const start = windowHeight * 0.85;
+                                const end = windowHeight * 0.25;
 
-                                const scrollingDown = currentScroll > lastScroll;
+                                let progress = (start - rect.top) / (start - end);
+                                targetProgress = Math.max(0, Math.min(1, progress));
 
-                                lastScroll = currentScroll;
+                                if (!isAnimating) {
+                                    isAnimating = true;
+                                    requestAnimationFrame(animate);
+                                }
+                            };
 
-                                letters.forEach((letter, index) => {
+                            const animate = () => {
+                                currentProgress += (targetProgress - currentProgress) * 0.08;
 
-                                    const delay = scrollingDown
-                                        ? index * 15
-                                        : (letters.length - index) * 15;
+                                const revealCount = Math.floor(currentProgress * chars.length);
 
-                                    setTimeout(() => {
-
-                                        if (scrollingDown) {
-
-                                            // Fade color LEFT -> RIGHT
-                                            letter.style.opacity = '0.25';
-
+                                chars.forEach((charSpan, index) => {
+                                    if (index < revealCount) {
+                                        charSpan.classList.remove('text-slate-300');
+                                        if (charSpan.classList.contains('font-bold')) {
+                                            charSpan.classList.add('text-blue-600');
                                         } else {
-
-                                            // Restore color RIGHT -> LEFT
-                                            letter.style.opacity = '1';
-
+                                            charSpan.classList.add('text-[#0f172a]');
                                         }
-
-                                    }, delay);
-
+                                    } else {
+                                        charSpan.classList.remove('text-[#0f172a]', 'text-blue-600');
+                                        charSpan.classList.add('text-slate-300');
+                                    }
                                 });
 
-                            });
+                                if (Math.abs(targetProgress - currentProgress) > 0.001) {
+                                    requestAnimationFrame(animate);
+                                } else {
+                                    isAnimating = false;
+                                }
+                            };
 
+                            window.addEventListener('scroll', updateScroll);
+                            updateScroll();
                         });
                     </script>
                 </div>
@@ -217,34 +200,128 @@
                     </a>
                 </div>
 
-                <!-- Static Logos Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mt-4" data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="w-full bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                        <img src="assets/Logo/Client1.webp"
-                            class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                            alt="Client">
-                    </div>
-                    <div
-                        class="w-full bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                        <img src="assets/Logo/Client5.webp"
-                            class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                            alt="Client">
-                    </div>
-                    <div
-                        class="w-full bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                        <img src="assets/Logo/Client17.webp"
-                            class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                            alt="Client">
-                    </div>
-                    <div
-                        class="w-full bg-[#f8fafc] rounded-3xl p-8 aspect-[4/3] flex items-center justify-center hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 group">
-                        <img src="assets/Logo/Client4.webp"
-                            class="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
-                            alt="Client">
-                    </div>
+
+            </div>
+        </section>
+
+        <section class="relative min-h-screen flex flex-col md:flex-row items-stretch overflow-hidden bg-white">
+
+            <!-- LEFT SIDE: THE TECH CORE (Infrastructure & Services) -->
+            <div
+                class="relative flex-1 flex flex-col justify-center px-6 py-20 md:p-16 lg:p-24 bg-gradient-to-br from-blue-50/50 via-white to-transparent transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group/tech hover:flex-[1.25] border-b md:border-b-0 md:border-r border-slate-100 transform-gpu">
+
+                <!-- Subtle Background Tech Grid Pattern (Light) -->
+                <div
+                    class="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem]">
                 </div>
 
+                <!-- Animated glowing ambient light (Light) -->
+                <div
+                    class="absolute -left-20 -top-20 w-80 h-80 bg-blue-400/10 rounded-full blur-[120px] pointer-events-none group-hover/tech:bg-blue-400/20 transition-all duration-500">
+                </div>
+
+                <div
+                    class="relative z-10 mx-auto md:mr-0 md:ml-auto w-full md:w-[25rem] lg:w-[31.25rem] xl:w-[33.75rem] flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/tech:-translate-x-2 group-hover/tech:scale-[1.02]">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold text-blue-600 rounded-full bg-blue-50 border border-blue-100 mb-6 uppercase tracking-widest">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                        Infrastructure & Core Tech
+                    </div>
+
+                    <h2 class="text-4xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                        We Build The <br>
+                        <span class="text-blue-600">Robust Infrastructure.</span>
+                    </h2>
+
+                    <p class="mt-6 text-base text-slate-500 leading-relaxed font-medium">
+                        Scalable cloud hosting, advanced API mappings, secure WhatsApp automation, and precision custom
+                        software architectures engineered for high-performance enterprise operations.
+                    </p>
+
+                    <div
+                        class="mt-8 flex flex-wrap gap-2 text-[11px] text-slate-400 font-bold uppercase tracking-wider">
+                        <span class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">Secure
+                            Hosting</span>
+                        <span class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">API
+                            Gateway</span>
+                        <span class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">DevOps</span>
+                        <span class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">Bulk
+                            SMS</span>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="services.html" data-cursor-text="OPEN"
+                            class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-full shadow-xl shadow-blue-900/20 transition-all duration-300 transform hover:-translate-y-1 group">
+                            Launch Tech Console
+                            <i
+                                class="bi bi-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: THE ECOSYSTEM CORE (Fintech & Community Products) -->
+            <div
+                class="relative flex-1 flex flex-col justify-center px-6 py-20 md:p-16 lg:p-24 bg-gradient-to-bl from-emerald-50/50 via-white to-transparent transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group/eco hover:flex-[1.25] transform-gpu">
+
+                <!-- Subtle Organic Dot Pattern (Light) -->
+                <div
+                    class="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]">
+                </div>
+
+                <!-- Animated glowing ambient light (Light) -->
+                <div
+                    class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-400/10 rounded-full blur-[120px] pointer-events-none group-hover/eco:bg-emerald-400/20 transition-all duration-500">
+                </div>
+
+                <div
+                    class="relative z-10 mx-auto md:ml-0 md:mr-auto w-full md:w-[25rem] lg:w-[31.25rem] xl:w-[33.75rem] flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/eco:translate-x-2 group-hover/eco:scale-[1.02]">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold text-emerald-600 rounded-full bg-emerald-50 border border-emerald-100 mb-6 uppercase tracking-widest">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                        Fintech & Local Ecosystems
+                    </div>
+
+                    <h2 class="text-4xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                        We Power The <br>
+                        <span class="text-emerald-600">Digital Ecosystem.</span>
+                    </h2>
+
+                    <p class="mt-6 text-base text-slate-500 leading-relaxed font-medium">
+                        Specialized micro-finance, comprehensive cloud accounting solutions, and intelligent chit fund
+                        frameworks engineered to transform local financial ecosystems and regional societies.
+                    </p>
+
+                    <div
+                        class="mt-8 flex flex-wrap gap-2 text-[11px] text-slate-400 font-bold uppercase tracking-wider">
+                        <span
+                            class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">SahakaryMIS</span>
+                        <span
+                            class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">MuttatheMulla</span>
+                        <span
+                            class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">EasyLender</span>
+                        <span
+                            class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">RioEasyCollect</span>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="products.html" data-cursor-text="EXPLORE"
+                            class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-full shadow-xl shadow-emerald-900/20 transition-all duration-300 transform hover:-translate-y-1 group">
+                            Explore Ecosystem
+                            <i
+                                class="bi bi-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Toggle Display Overlay -->
+            <div
+                class="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none items-center justify-center">
+                <div
+                    class="w-16 h-16 rounded-full bg-white border border-slate-200 shadow-2xl flex items-center justify-center backdrop-blur-xl text-slate-400 font-bold text-xs">
+                    VS
+                </div>
             </div>
         </section>
 
@@ -259,10 +336,10 @@
                 </div>
 
                 <div
-                    class="max-w-7xl w-full mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+                    class="max-w-7xl w-full mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
 
                     <!-- LEFT COLUMN: Sticky Titles -->
-                    <div class="w-full lg:w-5/12 flex flex-col justify-center z-20">
+                    <div class="w-full lg:w-5/12 lg:pl-16 flex flex-col justify-center z-20">
                         <span class="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs mb-6 block">
                             Our Advantage
                         </span>
@@ -272,7 +349,7 @@
                             <div
                                 class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-100 translate-y-0">
                                 <h2
-                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                                     Delivering <br>
                                     <span class="text-blue-600">Connected</span> <br>
                                     Ecosystems.
@@ -286,7 +363,7 @@
                             <div
                                 class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
                                 <h2
-                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                                     Built Around <br>
                                     <span class="text-emerald-600">Your Workflow.</span>
                                 </h2>
@@ -300,7 +377,7 @@
                             <div
                                 class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
                                 <h2
-                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                                     Always Here <br>
                                     <span class="text-purple-600">For Your Business.</span>
                                 </h2>
@@ -314,7 +391,7 @@
                             <div
                                 class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
                                 <h2
-                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                                     Uncompromising <br>
                                     <span class="text-red-600">Data Security.</span>
                                 </h2>
@@ -328,7 +405,7 @@
                             <div
                                 class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
                                 <h2
-                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                                     Built for <br>
                                     <span class="text-orange-600">Modern Customers.</span>
                                 </h2>
@@ -342,7 +419,7 @@
                             <div
                                 class="sticky-title col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col justify-center opacity-0 translate-y-8 pointer-events-none">
                                 <h2
-                                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                                    class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                                     Connecting Every <br>
                                     <span class="text-cyan-600">Touchpoint.</span>
                                 </h2>
@@ -355,14 +432,14 @@
                     </div>
 
                     <!-- RIGHT COLUMN: Sticky Advantage Cards (with Animated Icons) -->
-                    <div class="w-full lg:w-7/12 flex items-center justify-center">
-                        <div class="grid grid-cols-1 grid-rows-1 relative w-full max-w-xl min-h-[420px]">
+                    <div class="w-full lg:w-5/12 flex items-center justify-start">
+                        <div class="grid grid-cols-1 grid-rows-1 relative w-full max-w-md min-h-[350px]">
 
                             <!-- Card 1 -->
                             <div
-                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-100 translate-y-0 scale-100">
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-100 translate-y-0 scale-100">
                                 <div
-                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-blue-500/20 mb-8 overflow-hidden p-2">
+                                    class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shadow-lg shadow-blue-500/20 mb-6 overflow-hidden p-2">
                                     <svg width="0" height="0" style="position:absolute;z-index:-1;">
                                         <filter id="blue-ecosystem">
                                             <feComponentTransfer>
@@ -373,21 +450,21 @@
                                         </filter>
                                     </svg>
                                     <img src="assets/img/ecosystem.gif" alt="Ecosystem Icon"
-                                        class="w-16 h-16 object-contain" style="filter: url(#blue-ecosystem);">
+                                        class="w-10 h-10 object-contain" style="filter: url(#blue-ecosystem);">
                                 </div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <!-- <div
                                         class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-sm font-bold">
                                         01</div> -->
-                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">The
+                                    <h3 class="text-xl md:text-2xl font-extrabold text-[#0f172a] tracking-tight">The
                                         Ecosystem</h3>
                                 </div>
-                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                <p class="text-sm md:text-base text-slate-500 mb-6 leading-relaxed">
                                     Bring your ERP, fintech, communications, and customer platforms into a single
                                     connected ecosystem.
                                 </p>
                                 <a href="products.html"
-                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
                                     Know More
                                     <i
                                         class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
@@ -396,32 +473,32 @@
 
                             <!-- Card 2 -->
                             <div
-                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
                                 <!-- <div
                                     class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-emerald-500 to-emerald-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30 mb-8 animate-pulse">
                                     <i class="bi bi-gear-wide-connected text-3xl"></i>
                                 </div> -->
 
                                 <div
-                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-emerald-500/20 mb-8 overflow-hidden p-2">
+                                    class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shadow-lg shadow-emerald-500/20 mb-6 overflow-hidden p-2">
 
                                     <img src="assets/img/workflow.gif" alt="Workflow Icon"
-                                        class="w-16 h-16 object-contain">
+                                        class="w-10 h-10 object-contain">
                                 </div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <!-- <div
                                         class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 text-sm font-bold">
                                         02</div> -->
-                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">Built
+                                    <h3 class="text-xl md:text-2xl font-extrabold text-[#0f172a] tracking-tight">Built
                                         Around Your Workflow</h3>
                                 </div>
-                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                <p class="text-sm md:text-base text-slate-500 mb-6 leading-relaxed">
                                     From custom software to AI and WhatsApp integrations, every solution is tailored to
                                     your institution's operations.
 
                                 </p>
                                 <a href="services.html"
-                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
                                     Know More
                                     <i
                                         class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
@@ -430,25 +507,25 @@
 
                             <!-- Card 3 -->
                             <div
-                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
                                 <div
-                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-emerald-500/20 mb-8 overflow-hidden p-2">
+                                    class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shadow-lg shadow-emerald-500/20 mb-6 overflow-hidden p-2">
 
-                                    <img src="assets/img/supp.gif" alt="Workflow Icon" class="w-16 h-16 object-contain">
+                                    <img src="assets/img/supp.gif" alt="Workflow Icon" class="w-10 h-10 object-contain">
                                 </div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <!-- <div
                                         class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-sm font-bold">
                                         03</div> -->
-                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">24/7
+                                    <h3 class="text-xl md:text-2xl font-extrabold text-[#0f172a] tracking-tight">24/7
                                         Support</h3>
                                 </div>
-                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                <p class="text-sm md:text-base text-slate-500 mb-6 leading-relaxed">
                                     Our dedicated support call center ensures that expert help is always just a phone
                                     call away, 24/7.
                                 </p>
                                 <a href="contact.html"
-                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
                                     Know More
                                     <i
                                         class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
@@ -457,9 +534,9 @@
 
                             <!-- Card 4 -->
                             <div
-                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
                                 <div
-                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-red-500/20 mb-8 overflow-hidden p-2">
+                                    class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shadow-lg shadow-red-500/20 mb-6 overflow-hidden p-2">
                                     <svg width="0" height="0" style="position:absolute;z-index:-1;">
                                         <filter id="red-key">
                                             <feComponentTransfer>
@@ -470,22 +547,22 @@
                                         </filter>
                                     </svg>
                                     <img src="assets/img/security.gif" alt="Security Icon"
-                                        class="w-16 h-16 object-contain" style="filter: url(#red-key);">
+                                        class="w-10 h-10 object-contain" style="filter: url(#red-key);">
                                 </div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <!-- <div
                                         class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600 text-sm font-bold">
                                         04</div> -->
-                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">
+                                    <h3 class="text-xl md:text-2xl font-extrabold text-[#0f172a] tracking-tight">
                                         Enterprise-Grade Security</h3>
                                 </div>
-                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                <p class="text-sm md:text-base text-slate-500 mb-6 leading-relaxed">
                                     We implement multi-layered security protocols to safeguard sensitive financial and
                                     data.
 
                                 </p>
                                 <a href="services.html"
-                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-red-600 hover:bg-red-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-red-600 hover:bg-red-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
                                     Know More
                                     <i
                                         class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
@@ -494,27 +571,27 @@
 
                             <!-- Card 5 -->
                             <div
-                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
                                 <div
-                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-orange-500/20 mb-8 overflow-hidden p-2">
+                                    class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shadow-lg shadow-orange-500/20 mb-6 overflow-hidden p-2">
 
                                     <img src="assets/img/development.gif" alt="Customers Icon"
-                                        class="w-16 h-16 object-contain">
+                                        class="w-10 h-10 object-contain">
                                 </div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <!-- <div
                                         class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-sm font-bold">
                                         05</div> -->
-                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">Built
+                                    <h3 class="text-xl md:text-2xl font-extrabold text-[#0f172a] tracking-tight">Built
                                         for Modern Customers</h3>
                                 </div>
-                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                <p class="text-sm md:text-base text-slate-500 mb-6 leading-relaxed">
                                     Mobile-friendly websites and digital experiences that strengthen trust and
                                     accessibility.
 
                                 </p>
                                 <a href="services.html"
-                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-orange-600 hover:bg-orange-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-orange-600 hover:bg-orange-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
                                     Know More
                                     <i
                                         class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
@@ -523,26 +600,26 @@
 
                             <!-- Card 6 -->
                             <div
-                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
+                                class="sticky-card col-start-1 row-start-1 transition-all duration-700 ease-out flex flex-col items-start justify-center p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-xl opacity-0 translate-y-12 scale-95 pointer-events-none">
                                 <div
-                                    class="w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-cyan-500/20 mb-8 overflow-hidden p-2">
+                                    class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shadow-lg shadow-cyan-500/20 mb-6 overflow-hidden p-2">
 
                                     <img src="assets/img/sms.gif" alt="Communication Icon"
-                                        class="w-16 h-16 object-contain">
+                                        class="w-10 h-10 object-contain">
                                 </div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <!-- <div
                                         class="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 text-sm font-bold">
                                         06</div> -->
-                                    <h3 class="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight">
+                                    <h3 class="text-xl md:text-2xl font-extrabold text-[#0f172a] tracking-tight">
                                         Reliable Communication Infrastructure</h3>
                                 </div>
-                                <p class="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
+                                <p class="text-sm md:text-base text-slate-500 mb-6 leading-relaxed">
                                     Bulk SMS and automated notification systems that keep your customers informed in
                                     real time.
                                 </p>
                                 <a href="services.html"
-                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
+                                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white transition-all duration-300 font-bold text-sm text-[#0f172a] group/btn shadow-sm">
                                     Know More
                                     <i
                                         class="bi bi-arrow-up-right transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
@@ -604,126 +681,7 @@
         </section>
 
 
-        <section class="relative min-h-screen flex flex-col md:flex-row items-stretch overflow-hidden bg-white">
 
-            <!-- LEFT SIDE: THE TECH CORE (Infrastructure & Services) -->
-            <div
-                class="relative flex-1 flex flex-col justify-center px-6 py-20 md:p-16 lg:p-24 bg-gradient-to-br from-blue-50/50 via-white to-transparent transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group/tech hover:flex-[1.25] border-b md:border-b-0 md:border-r border-slate-100 transform-gpu">
-
-                <!-- Subtle Background Tech Grid Pattern (Light) -->
-                <div
-                    class="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem]">
-                </div>
-
-                <!-- Animated glowing ambient light (Light) -->
-                <div
-                    class="absolute -left-20 -top-20 w-80 h-80 bg-blue-400/10 rounded-full blur-[120px] pointer-events-none group-hover/tech:bg-blue-400/20 transition-all duration-500">
-                </div>
-
-                <div
-                    class="relative z-10 mx-auto md:mr-0 md:ml-auto w-full md:w-[400px] lg:w-[500px] xl:w-[540px] flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/tech:-translate-x-2 group-hover/tech:scale-[1.02]">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold text-blue-600 rounded-full bg-blue-50 border border-blue-100 mb-6 uppercase tracking-widest">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
-                        Infrastructure & Core Tech
-                    </div>
-
-                    <h2 class="text-4xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
-                        We Build The <br>
-                        <span class="text-blue-600">Robust Infrastructure.</span>
-                    </h2>
-
-                    <p class="mt-6 text-base text-slate-500 leading-relaxed font-medium">
-                        Scalable cloud hosting, advanced API mappings, secure WhatsApp automation, and precision custom
-                        software architectures engineered for high-performance enterprise operations.
-                    </p>
-
-                    <div
-                        class="mt-8 flex flex-wrap gap-2 text-[11px] text-slate-400 font-bold uppercase tracking-wider">
-                        <span class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">Secure
-                            Hosting</span>
-                        <span class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">API
-                            Gateway</span>
-                        <span class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">DevOps</span>
-                        <span class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">Bulk
-                            SMS</span>
-                    </div>
-
-                    <div class="mt-10">
-                        <a href="services.html"
-                            class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-full shadow-xl shadow-blue-900/20 transition-all duration-300 transform hover:-translate-y-1 group">
-                            Launch Tech Console
-                            <i
-                                class="bi bi-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RIGHT SIDE: THE ECOSYSTEM CORE (Fintech & Community Products) -->
-            <div
-                class="relative flex-1 flex flex-col justify-center px-6 py-20 md:p-16 lg:p-24 bg-gradient-to-bl from-emerald-50/50 via-white to-transparent transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group/eco hover:flex-[1.25] transform-gpu">
-
-                <!-- Subtle Organic Dot Pattern (Light) -->
-                <div
-                    class="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]">
-                </div>
-
-                <!-- Animated glowing ambient light (Light) -->
-                <div
-                    class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-400/10 rounded-full blur-[120px] pointer-events-none group-hover/eco:bg-emerald-400/20 transition-all duration-500">
-                </div>
-
-                <div
-                    class="relative z-10 mx-auto md:ml-0 md:mr-auto w-full md:w-[400px] lg:w-[500px] xl:w-[540px] flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/eco:translate-x-2 group-hover/eco:scale-[1.02]">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold text-emerald-600 rounded-full bg-emerald-50 border border-emerald-100 mb-6 uppercase tracking-widest">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
-                        Fintech & Local Ecosystems
-                    </div>
-
-                    <h2 class="text-4xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
-                        We Power The <br>
-                        <span class="text-emerald-600">Digital Ecosystem.</span>
-                    </h2>
-
-                    <p class="mt-6 text-base text-slate-500 leading-relaxed font-medium">
-                        Specialized micro-finance, comprehensive cloud accounting solutions, and intelligent chit fund
-                        frameworks engineered to transform local financial ecosystems and regional societies.
-                    </p>
-
-                    <div
-                        class="mt-8 flex flex-wrap gap-2 text-[11px] text-slate-400 font-bold uppercase tracking-wider">
-                        <span
-                            class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">SahakaryMIS</span>
-                        <span
-                            class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">MuttatheMulla</span>
-                        <span
-                            class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">EasyLender</span>
-                        <span
-                            class="px-3 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">RioEasyCollect</span>
-                    </div>
-
-                    <div class="mt-10">
-                        <a href="products.html"
-                            class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-full shadow-xl shadow-emerald-900/20 transition-all duration-300 transform hover:-translate-y-1 group">
-                            Explore Ecosystem
-                            <i
-                                class="bi bi-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Center Toggle Display Overlay -->
-            <div
-                class="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none items-center justify-center">
-                <div
-                    class="w-16 h-16 rounded-full bg-white border border-slate-200 shadow-2xl flex items-center justify-center backdrop-blur-xl text-slate-400 font-bold text-xs">
-                    VS
-                </div>
-            </div>
-        </section>
 
     </main>
 

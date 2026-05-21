@@ -174,7 +174,37 @@
         loadComponent("header-container", "nav-header.html");
         loadComponent("footer-container", "footer.html");
 
+        function sendWhatsAppMessage() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
 
+            if (!name || !email || !subject || !message) {
+                alert('Please fill out all fields first.');
+                return;
+            }
+
+            const text = `Hello PITS, I am ${name}.\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/919037014455?text=${encodedText}`, '_blank');
+        }
+
+        function sendEmailMessage() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                alert('Please fill out all fields first.');
+                return;
+            }
+
+            const body = `Hello PITS,\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`;
+            const mailtoUrl = `mailto:pravasisitsolutions@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoUrl;
+        }
     </script>
 </body>
 

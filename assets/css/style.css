@@ -1,38 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
+
+    /* Colors */
     --bg-main: #ffffff;
     --accent-blue: #01458C;
     --accent-red: #D6191D;
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(0, 0, 0, 0.08);
+
+    /* Typography */
+    --font-base: 16px;
+
+    --text-sm: 0.95rem;
+    --text-md: 1rem;
+    --text-lg: 1.2rem;
+
+    --heading-xl: clamp(3rem, 6vw, 5.5rem);
+    --heading-lg: 3rem;
+    --heading-md: 2rem;
+
+    /* Radius */
+    --radius-lg: 24px;
 }
 
 body {
     font-family: 'Inter', sans-serif;
+
     background-color: var(--bg-main);
+
     background-image:
         radial-gradient(at 0% 0%, rgba(1, 69, 140, 0.03) 0px, transparent 50%),
         radial-gradient(at 100% 0%, rgba(214, 25, 29, 0.02) 0px, transparent 50%);
+
     color: #0f172a;
+
     margin: 0;
     overflow-x: hidden;
-    letter-spacing: -0.01em;
+
+    font-size: var(--font-base);
+
+    line-height: 1.6;
+
+    letter-spacing: -0.02em;
+
+    font-weight: 400;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #475569;
 }
 
 .text-content-small {
-    font-size: 13px;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: #64748b;
-    font-weight: 400;
 }
 
 .heading-accent {
     font-style: italic;
-    font-family: serif;
-    /* Or a specific elegant font if available */
+    font-family: 'Playfair Display', serif;
+    /* Consider importing this from Google Fonts */
     color: var(--accent-blue);
     font-weight: 400;
+    margin-bottom: 0.5em;
+    /* Adds breathing room */
 }
 
 .card-ultra-rounded {
@@ -361,3 +396,41 @@ body {
 #scroll-reveal-text {
     perspective: 1000px;
 }
+
+@media (max-width: 768px) {
+    :root {
+        --type-scale-xl: 2.8rem;
+        /* Smaller hero text for mobile */
+    }
+
+    body {
+        font-size: 1.5rem;
+        /* Slightly smaller base for mobile */
+    }
+}
+
+h1 {
+    font-size: var(--heading-xl);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+h2 {
+    font-size: var(--heading-lg);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+h3 {
+    font-size: var(--heading-md);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* @media (min-width: 1024px) {
+    #why-choose-section .sticky-content {
+        zoom: 0.75;
+    }
+} */
