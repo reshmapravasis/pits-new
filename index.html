@@ -54,9 +54,97 @@
         <header class="relative h-screen min-h-[800px] w-full overflow-hidden">
             <!-- Full Screen Background Image -->
             <div class="absolute inset-0 z-0 bg-white">
+
+                <!-- Background Animated Lines -->
+                <div class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-[5]">
+                    <style>
+                        .bg-line {
+                            position: absolute;
+                            top: 0;
+                            width: 1px;
+                            height: 100%;
+                            background: linear-gradient(to bottom, transparent, rgba(1, 69, 140, 0.15), transparent);
+                        }
+
+                        .bg-line::after {
+                            content: '';
+                            position: absolute;
+                            top: -50%;
+                            left: -1px;
+                            width: 3px;
+                            height: 25%;
+                            background: linear-gradient(to bottom, transparent, #01458C, transparent);
+                            animation: lineDrop 4s infinite linear;
+                            border-radius: 50%;
+                            filter: blur(1px);
+                            box-shadow: 0 0 10px rgba(1, 69, 140, 0.5);
+                        }
+
+                        .bg-line:nth-child(1) {
+                            left: 15%;
+                        }
+
+                        .bg-line:nth-child(1)::after {
+                            animation-delay: 0s;
+                            animation-duration: 5s;
+                        }
+
+                        .bg-line:nth-child(2) {
+                            left: 35%;
+                        }
+
+                        .bg-line:nth-child(2)::after {
+                            animation-delay: 2.5s;
+                            animation-duration: 7s;
+                        }
+
+                        .bg-line:nth-child(3) {
+                            left: 65%;
+                        }
+
+                        .bg-line:nth-child(3)::after {
+                            animation-delay: 1.2s;
+                            animation-duration: 4.5s;
+                        }
+
+                        .bg-line:nth-child(4) {
+                            left: 85%;
+                        }
+
+                        .bg-line:nth-child(4)::after {
+                            animation-delay: 3.5s;
+                            animation-duration: 6s;
+                        }
+
+                        @keyframes lineDrop {
+                            0% {
+                                top: -50%;
+                                opacity: 0;
+                            }
+
+                            10% {
+                                opacity: 1;
+                            }
+
+                            80% {
+                                opacity: 1;
+                            }
+
+                            100% {
+                                top: 150%;
+                                opacity: 0;
+                            }
+                        }
+                    </style>
+                    <div class="bg-line"></div>
+                    <div class="bg-line"></div>
+                    <div class="bg-line"></div>
+                    <div class="bg-line"></div>
+                </div>
+
                 <div class="absolute inset-y-0 right-0 w-full lg:w-[85%]">
                     <img src="assets/img/line_vector_hero.png" alt="PITS Tech Partners"
-                        class="w-full h-full object-cover object-center">
+                        class="w-full h-full object-cover object-center relative z-[6]">
                 </div>
                 <!-- Overlay for depth and text contrast -->
                 <div
@@ -70,34 +158,19 @@
             </div>
 
             <!-- Content positioned at the bottom -->
-            <div class="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-56">
-                <div class="max-w-4xl">
-                    <!-- <div class="inline-block glass px-6 py-2 rounded-full border border-slate-200 mb-8"
-                        data-aos="fade-right">
-                        <span class="text-blue-500 font-bold tracking-widest text-xs uppercase"></span>
-                    </div> -->
-                    <h1 class="text-3xl md:text-7xl font-extrabold text-[#0f172a] tracking-tight leading-[1.2] md:leading-[1.15] mb-6 md:mb-8 text-center md:text-left"
+            <div class="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-[18rem]">
+                <div class="max-w-5xl -ml-2 md:-ml-6">
+                    <h1 class="text-5xl md:text-[5.5rem] lg:text-[6.5rem] font-extrabold text-[#0f172a] tracking-tight leading-[1.05] mb-8 text-left"
                         data-aos="fade-right" data-aos-delay="100">
                         Trusted <span class="text-[#D6191D]">Tech Partner</span> <br class="hidden md:block">for<span
                             class="text-[#01458C]"> 500+
                             businesses</span>
                     </h1>
-                    <!-- <p class="text-slate-500 max-w-2xl text-base md:text-lg leading-relaxed mb-12" data-aos="fade-right"
-                        data-aos-delay="200">
-                        AI-Assisted product development partner for 500+ businesses
-
-                    </p> -->
-                    <div class="flex gap-6 mt-6 md:mt-0 md:ml-[210px] lg:ml-[250px] justify-center md:justify-start"
-                        data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex gap-6 mt-6 md:mt-8 justify-start" data-aos="fade-up" data-aos-delay="300">
                         <button onclick="location.href='products.html'" data-cursor-text="EXPLORE"
-                            class="bg-blue-600 px-7 py-2.5 rounded-full font-bold text-white hover:bg-blue-500 transition shadow-lg shadow-blue-900/30 text-base">
+                            class="bg-blue-600 px-8 py-3.5 rounded-full font-bold text-white hover:bg-blue-500 transition shadow-lg shadow-blue-900/30 text-lg">
                             Explore Our Ecosystem
                         </button>
-
-                        <!-- <button onclick="location.href='contact.html'"
-                            class="glass px-7 py-3.5 rounded-full font-bold hover:bg-white transition border border-slate-300 text-base">
-                            Get in Touch
-                        </button> -->
                     </div>
                 </div>
             </div>
@@ -113,7 +186,7 @@
             <div class="max-w-7xl mx-auto flex flex-col gap-16">
                 <div data-aos="fade-up" class="max-w-6xl mx-auto text-center w-full">
                     <h2 id="scroll-reveal-text"
-                        class="text-2xl md:text-5xl lg:text-[3.3rem] leading-[1.05] font-light tracking-[-2px] text-left text-slate-300 select-none">
+                        class="text-3xl md:text-5xl lg:text-[3.3rem] leading-[1.05] font-light tracking-[-2px] text-left text-slate-300 select-none">
                     </h2>
                     <script>
                         document.addEventListener('DOMContentLoaded', () => {
@@ -228,12 +301,14 @@
                         Infrastructure & Core Tech
                     </div>
 
-                    <h2 class="text-4xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight min-h-[120px] md:min-h-[150px] lg:min-h-[200px]">
+                    <h2
+                        class="text-4xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight min-h-[120px] md:min-h-[150px] lg:min-h-[200px]">
                         We Build The <br>
                         <span class="text-blue-600">Robust Infrastructure.</span>
                     </h2>
 
-                    <p class="mt-6 text-base text-slate-500 leading-relaxed font-medium min-h-[120px] md:min-h-[100px] lg:min-h-[80px]">
+                    <p
+                        class="mt-6 text-base text-slate-500 leading-relaxed font-medium min-h-[120px] md:min-h-[100px] lg:min-h-[80px]">
                         Scalable cloud hosting, advanced API mappings, secure WhatsApp automation, and precision custom
                         software architectures engineered for high-performance enterprise operations.
                     </p>
@@ -270,8 +345,7 @@
                 </div>
 
                 <!-- Subtle Background Tech Vertical Line Pattern (Light) -->
-                <div
-                    class="absolute inset-0 opacity-[0.03]"
+                <div class="absolute inset-0 opacity-[0.03]"
                     style="background-image: linear-gradient(to right, #0f172a 1px, transparent 1px); background-size: 3rem 100%;">
                 </div>
 
@@ -288,12 +362,14 @@
                         Fintech & Local Ecosystems
                     </div>
 
-                    <h2 class="text-4xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight min-h-[120px] md:min-h-[150px] lg:min-h-[200px]">
+                    <h2
+                        class="text-4xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight leading-tight min-h-[120px] md:min-h-[150px] lg:min-h-[200px]">
                         We Power The <br>
                         <span class="text-emerald-600">Digital Ecosystem.</span>
                     </h2>
 
-                    <p class="mt-6 text-base text-slate-500 leading-relaxed font-medium min-h-[120px] md:min-h-[100px] lg:min-h-[80px]">
+                    <p
+                        class="mt-6 text-base text-slate-500 leading-relaxed font-medium min-h-[120px] md:min-h-[100px] lg:min-h-[80px]">
                         Specialized micro-finance, comprehensive cloud accounting solutions, and intelligent chit fund
                         frameworks engineered to transform local financial ecosystems and regional societies.
                     </p>
