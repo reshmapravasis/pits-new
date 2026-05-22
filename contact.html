@@ -24,7 +24,7 @@
     <link rel="icon" type="image/png" href="assets/img/pits_logo.png">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="assets/js/components.js"></script>
+    <script src="assets/js/components.js?v=2"></script>
 </head>
 
 <body class=" text-[#0f172a] overflow-x-hidden">
@@ -171,8 +171,8 @@
 
     <script>
         AOS.init({ duration: 1000, once: true });
-        loadComponent("header-container", "nav-header.html");
-        loadComponent("footer-container", "footer.html");
+        loadComponent("header-container", "nav-header.html?v=2");
+        loadComponent("footer-container", "footer.html?v=2");
 
         function sendWhatsAppMessage() {
             const name = document.getElementById('name').value.trim();

@@ -46,7 +46,7 @@ function highlightActiveLink() {
     const page = path.split("/").pop() || "index.html";
     
     // Find all navigation links
-    const links = document.querySelectorAll('nav a');
+    const links = document.querySelectorAll('nav a.nav-link');
     
     links.forEach(link => {
         const href = link.getAttribute('href');
