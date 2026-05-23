@@ -486,21 +486,25 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Pillar 1 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="0">
+                    <div class="group h-auto md:h-[320px] w-full md:[perspective:1000px]" data-aos="fade-up" data-aos-delay="0">
                         <div
-                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            class="relative h-full w-full transition-transform duration-700 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
                             <!-- Front -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                class="relative md:absolute inset-0 md:[backface-visibility:hidden] bg-orange-500 md:bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-transparent md:border-slate-100 shadow-lg md:shadow-sm text-center">
                                 <div
-                                    class="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 text-orange-500 text-3xl">
+                                    class="w-16 h-16 rounded-2xl bg-white/20 md:bg-orange-100 flex items-center justify-center mb-6 text-white md:text-orange-500 text-3xl">
                                     <i class="bi bi-telephone-inbound"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Priority Voice</h3>
+                                <h3 class="text-2xl font-bold md:mb-4 text-white md:text-slate-900">Priority Voice</h3>
+                                <p class="text-orange-50 leading-relaxed block md:hidden mt-4">
+                                    Direct access to our senior technical engineers for immediate resolution of critical
+                                    issues via dedicated phone lines.
+                                </p>
                             </div>
                             <!-- Back -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-orange-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                class="hidden md:flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-orange-500 rounded-3xl p-8 flex-col items-center justify-center text-center shadow-lg">
                                 <h3 class="text-2xl font-bold text-white mb-4">Priority Voice</h3>
                                 <p class="text-orange-50 leading-relaxed">
                                     Direct access to our senior technical engineers for immediate resolution of critical
@@ -511,21 +515,25 @@
                     </div>
 
                     <!-- Pillar 2 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="100">
+                    <div class="group h-auto md:h-[320px] w-full md:[perspective:1000px]" data-aos="fade-up" data-aos-delay="100">
                         <div
-                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            class="relative h-full w-full transition-transform duration-700 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
                             <!-- Front -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                class="relative md:absolute inset-0 md:[backface-visibility:hidden] bg-blue-500 md:bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-transparent md:border-slate-100 shadow-lg md:shadow-sm text-center">
                                 <div
-                                    class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 text-blue-500 text-3xl">
+                                    class="w-16 h-16 rounded-2xl bg-white/20 md:bg-blue-100 flex items-center justify-center mb-6 text-white md:text-blue-500 text-3xl">
                                     <i class="bi bi-pc-display-horizontal"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Remote Assist</h3>
+                                <h3 class="text-2xl font-bold md:mb-4 text-white md:text-slate-900">Remote Assist</h3>
+                                <p class="text-blue-50 leading-relaxed block md:hidden mt-4">
+                                    Quick and secure remote desktop support to fix software issues, configure settings,
+                                    and provide real-time training.
+                                </p>
                             </div>
                             <!-- Back -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-blue-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                class="hidden md:flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-blue-500 rounded-3xl p-8 flex-col items-center justify-center text-center shadow-lg">
                                 <h3 class="text-2xl font-bold text-white mb-4">Remote Assist</h3>
                                 <p class="text-blue-50 leading-relaxed">
                                     Quick and secure remote desktop support to fix software issues, configure settings,
@@ -536,21 +544,25 @@
                     </div>
 
                     <!-- Pillar 3 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="200">
+                    <div class="group h-auto md:h-[320px] w-full md:[perspective:1000px]" data-aos="fade-up" data-aos-delay="200">
                         <div
-                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            class="relative h-full w-full transition-transform duration-700 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
                             <!-- Front -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                class="relative md:absolute inset-0 md:[backface-visibility:hidden] bg-emerald-500 md:bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-transparent md:border-slate-100 shadow-lg md:shadow-sm text-center">
                                 <div
-                                    class="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6 text-emerald-500 text-3xl">
+                                    class="w-16 h-16 rounded-2xl bg-white/20 md:bg-emerald-100 flex items-center justify-center mb-6 text-white md:text-emerald-500 text-3xl">
                                     <i class="bi bi-clock-history"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 text-slate-900">24/7 Access</h3>
+                                <h3 class="text-2xl font-bold md:mb-4 text-white md:text-slate-900">24/7 Access</h3>
+                                <p class="text-emerald-50 leading-relaxed block md:hidden mt-4">
+                                    Our support center operates 24/7, 365 days a year, ensuring that your banking
+                                    operations never face downtime.
+                                </p>
                             </div>
                             <!-- Back -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-emerald-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                class="hidden md:flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-emerald-500 rounded-3xl p-8 flex-col items-center justify-center text-center shadow-lg">
                                 <h3 class="text-2xl font-bold text-white mb-4">24/7 Access</h3>
                                 <p class="text-emerald-50 leading-relaxed">
                                     Our support center operates 24/7, 365 days a year, ensuring that your banking
@@ -561,21 +573,25 @@
                     </div>
 
                     <!-- Pillar 4 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="300">
+                    <div class="group h-auto md:h-[320px] w-full md:[perspective:1000px]" data-aos="fade-up" data-aos-delay="300">
                         <div
-                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            class="relative h-full w-full transition-transform duration-700 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
                             <!-- Front -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                class="relative md:absolute inset-0 md:[backface-visibility:hidden] bg-purple-500 md:bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-transparent md:border-slate-100 shadow-lg md:shadow-sm text-center">
                                 <div
-                                    class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 text-purple-500 text-3xl">
+                                    class="w-16 h-16 rounded-2xl bg-white/20 md:bg-purple-100 flex items-center justify-center mb-6 text-white md:text-purple-500 text-3xl">
                                     <i class="bi bi-chat-dots"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Reliable & Responsive</h3>
+                                <h3 class="text-2xl font-bold md:mb-4 text-white md:text-slate-900">Reliable & Responsive</h3>
+                                <p class="text-purple-50 leading-relaxed block md:hidden mt-4">
+                                    Provide instant customer assistance with integrated support call features for faster
+                                    and more efficient communication.
+                                </p>
                             </div>
                             <!-- Back -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-purple-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                class="hidden md:flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-purple-500 rounded-3xl p-8 flex-col items-center justify-center text-center shadow-lg">
                                 <h3 class="text-2xl font-bold text-white mb-4">Reliable & Responsive</h3>
                                 <p class="text-purple-50 leading-relaxed">
                                     Provide instant customer assistance with integrated support call features for faster

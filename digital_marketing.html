@@ -458,21 +458,25 @@
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Pillar 1 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="0">
+                    <div class="group h-auto md:h-[320px] w-full md:[perspective:1000px]" data-aos="fade-up" data-aos-delay="0">
                         <div
-                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            class="relative h-full w-full transition-transform duration-700 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
                             <!-- Front -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                class="relative md:absolute inset-0 md:[backface-visibility:hidden] bg-blue-600 md:bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-transparent md:border-slate-100 shadow-lg md:shadow-sm text-center">
                                 <div
-                                    class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 text-blue-600 text-3xl">
+                                    class="w-16 h-16 rounded-2xl bg-white/20 md:bg-blue-100 flex items-center justify-center mb-6 text-white md:text-blue-600 text-3xl">
                                     <i class="bi bi-megaphone"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Awareness</h3>
+                                <h3 class="text-2xl font-bold md:mb-4 text-white md:text-slate-900">Awareness</h3>
+                                <p class="text-blue-50 leading-relaxed block md:hidden mt-4">
+                                    Increasing your institution's visibility through high-quality visual content and
+                                    local SEO optimization.
+                                </p>
                             </div>
                             <!-- Back -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-blue-600 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                class="hidden md:flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-blue-600 rounded-3xl p-8 flex-col items-center justify-center text-center shadow-lg">
                                 <h3 class="text-2xl font-bold text-white mb-4">Awareness</h3>
                                 <p class="text-blue-50 leading-relaxed">
                                     Increasing your institution's visibility through high-quality visual content and
@@ -483,21 +487,25 @@
                     </div>
 
                     <!-- Pillar 2 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="100">
+                    <div class="group h-auto md:h-[320px] w-full md:[perspective:1000px]" data-aos="fade-up" data-aos-delay="100">
                         <div
-                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            class="relative h-full w-full transition-transform duration-700 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
                             <!-- Front -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                class="relative md:absolute inset-0 md:[backface-visibility:hidden] bg-emerald-600 md:bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-transparent md:border-slate-100 shadow-lg md:shadow-sm text-center">
                                 <div
-                                    class="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6 text-emerald-600 text-3xl">
+                                    class="w-16 h-16 rounded-2xl bg-white/20 md:bg-emerald-100 flex items-center justify-center mb-6 text-white md:text-emerald-600 text-3xl">
                                     <i class="bi bi-people"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Engagement</h3>
+                                <h3 class="text-2xl font-bold md:mb-4 text-white md:text-slate-900">Engagement</h3>
+                                <p class="text-emerald-50 leading-relaxed block md:hidden mt-4">
+                                    Fostering trust by engaging with members on platforms they use every day like
+                                    Facebook and WhatsApp.
+                                </p>
                             </div>
                             <!-- Back -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-emerald-600 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                class="hidden md:flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-emerald-600 rounded-3xl p-8 flex-col items-center justify-center text-center shadow-lg">
                                 <h3 class="text-2xl font-bold text-white mb-4">Engagement</h3>
                                 <p class="text-emerald-50 leading-relaxed">
                                     Fostering trust by engaging with members on platforms they use every day like
@@ -508,21 +516,25 @@
                     </div>
 
                     <!-- Pillar 3 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="200">
+                    <div class="group h-auto md:h-[320px] w-full md:[perspective:1000px]" data-aos="fade-up" data-aos-delay="200">
                         <div
-                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            class="relative h-full w-full transition-transform duration-700 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
                             <!-- Front -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                class="relative md:absolute inset-0 md:[backface-visibility:hidden] bg-purple-600 md:bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-transparent md:border-slate-100 shadow-lg md:shadow-sm text-center">
                                 <div
-                                    class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 text-purple-600 text-3xl">
+                                    class="w-16 h-16 rounded-2xl bg-white/20 md:bg-purple-100 flex items-center justify-center mb-6 text-white md:text-purple-600 text-3xl">
                                     <i class="bi bi-graph-up-arrow"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Conversion</h3>
+                                <h3 class="text-2xl font-bold md:mb-4 text-white md:text-slate-900">Conversion</h3>
+                                <p class="text-purple-50 leading-relaxed block md:hidden mt-4">
+                                    Turning digital interest into tangible growth, from new account openings to loan
+                                    applications.
+                                </p>
                             </div>
                             <!-- Back -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-purple-600 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                class="hidden md:flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-purple-600 rounded-3xl p-8 flex-col items-center justify-center text-center shadow-lg">
                                 <h3 class="text-2xl font-bold text-white mb-4">Conversion</h3>
                                 <p class="text-purple-50 leading-relaxed">
                                     Turning digital interest into tangible growth, from new account openings to loan
@@ -533,21 +545,25 @@
                     </div>
 
                     <!-- Pillar 4 -->
-                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="300">
+                    <div class="group h-auto md:h-[320px] w-full md:[perspective:1000px]" data-aos="fade-up" data-aos-delay="300">
                         <div
-                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            class="relative h-full w-full transition-transform duration-700 md:[transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
                             <!-- Front -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                class="relative md:absolute inset-0 md:[backface-visibility:hidden] bg-orange-500 md:bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-transparent md:border-slate-100 shadow-lg md:shadow-sm text-center">
                                 <div
-                                    class="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 text-orange-500 text-3xl">
+                                    class="w-16 h-16 rounded-2xl bg-white/20 md:bg-orange-100 flex items-center justify-center mb-6 text-white md:text-orange-500 text-3xl">
                                     <i class="bi bi-shield-check"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Retention</h3>
+                                <h3 class="text-2xl font-bold md:mb-4 text-white md:text-slate-900">Retention</h3>
+                                <p class="text-orange-50 leading-relaxed block md:hidden mt-4">
+                                    Automated notification systems and educational content to keep your members loyal
+                                    and informed.
+                                </p>
                             </div>
                             <!-- Back -->
                             <div
-                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-orange-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                class="hidden md:flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-orange-500 rounded-3xl p-8 flex-col items-center justify-center text-center shadow-lg">
                                 <h3 class="text-2xl font-bold text-white mb-4">Retention</h3>
                                 <p class="text-orange-50 leading-relaxed">
                                     Automated notification systems and educational content to keep your members loyal
