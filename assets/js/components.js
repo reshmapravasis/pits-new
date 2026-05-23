@@ -12,9 +12,9 @@ function loadComponent(id, file) {
         return;
     }
 
-    // Use session storage to cache the HTML and inject instantly
+    // Use local storage to cache the HTML and inject instantly forever
     const cacheKey = `pits_component_${file}`;
-    const cachedData = sessionStorage.getItem(cacheKey);
+    const cachedData = localStorage.getItem(cacheKey);
 
     if (cachedData) {
         // Inject immediately if cached
@@ -27,7 +27,7 @@ function loadComponent(id, file) {
                 return response.text();
             })
             .then(data => {
-                sessionStorage.setItem(cacheKey, data);
+                localStorage.setItem(cacheKey, data);
                 injectComponentData(container, data, file);
             })
             .catch(err => {

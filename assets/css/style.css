@@ -497,3 +497,76 @@ h3 {
 #main-nav .group\/item:hover span.text-\[10px\] {
     color: #334155 !important;
 }
+
+/* ==========================================================================
+   INSTANT CSS ACCENT HOOKS (ELIMINATES JAVASCRIPT HYDRATION FLASH)
+   ========================================================================== */
+
+/* Active State Styles */
+html[data-page="about.html"] #main-nav a[href="about.html"],
+html[data-page="case_study.html"] #main-nav a[href="case_study.html"],
+html[data-page="products.html"] #main-nav a[href="products.html"],
+html[data-page="services.html"] #main-nav a[href="services.html"] {
+    color: var(--accent-red) !important;
+}
+
+html[data-page="about.html"] #main-nav a[href="about.html"]::after,
+html[data-page="case_study.html"] #main-nav a[href="case_study.html"]::after,
+html[data-page="products.html"] #main-nav a[href="products.html"]::after,
+html[data-page="services.html"] #main-nav a[href="services.html"]::after {
+    width: 100% !important;
+}
+
+/* Service Page Subpage Accent Flags */
+html[data-page="website_dev.html"] #main-nav a[href="services.html"],
+html[data-page="sms_services.html"] #main-nav a[href="services.html"],
+html[data-page="custom_sw.html"] #main-nav a[href="services.html"],
+html[data-page="whatsapp_api.html"] #main-nav a[href="services.html"],
+html[data-page="support.html"] #main-nav a[href="services.html"],
+html[data-page="digital_marketing.html"] #main-nav a[href="services.html"] {
+    color: var(--accent-red) !important;
+}
+
+/* Product Page Subpage Accent Flags */
+html[data-page="sahakarimis.html"] #main-nav a[href="products.html"],
+html[data-page="rioeasy.html"] #main-nav a[href="products.html"],
+html[data-page="mulla.html"] #main-nav a[href="products.html"],
+html[data-page="vyapari.html"] #main-nav a[href="products.html"],
+html[data-page="easylender.html"] #main-nav a[href="products.html"] {
+    color: var(--accent-red) !important;
+}
+
+#main-nav {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Subpage Dropdown Active Highlighting */
+html[data-page="website_dev.html"] #main-nav a[href="website_dev.html"],
+html[data-page="sms_services.html"] #main-nav a[href="sms_services.html"],
+html[data-page="custom_sw.html"] #main-nav a[href="custom_sw.html"],
+html[data-page="whatsapp_api.html"] #main-nav a[href="whatsapp_api.html"],
+html[data-page="support.html"] #main-nav a[href="support.html"],
+html[data-page="digital_marketing.html"] #main-nav a[href="digital_marketing.html"],
+html[data-page="sahakarimis.html"] #main-nav a[href="sahakarimis.html"],
+html[data-page="rioeasy.html"] #main-nav a[href="rioeasy.html"],
+html[data-page="mulla.html"] #main-nav a[href="mulla.html"],
+html[data-page="vyapari.html"] #main-nav a[href="vyapari.html"],
+html[data-page="easylender.html"] #main-nav a[href="easylender.html"] {
+    background-color: #dbeafe !important;
+}
+
+html[data-page="website_dev.html"] #main-nav a[href="website_dev.html"] span,
+html[data-page="sms_services.html"] #main-nav a[href="sms_services.html"] span,
+html[data-page="custom_sw.html"] #main-nav a[href="custom_sw.html"] span,
+html[data-page="whatsapp_api.html"] #main-nav a[href="whatsapp_api.html"] span,
+html[data-page="support.html"] #main-nav a[href="support.html"] span,
+html[data-page="digital_marketing.html"] #main-nav a[href="digital_marketing.html"] span,
+html[data-page="sahakarimis.html"] #main-nav a[href="sahakarimis.html"] span,
+html[data-page="rioeasy.html"] #main-nav a[href="rioeasy.html"] span,
+html[data-page="mulla.html"] #main-nav a[href="mulla.html"] span,
+html[data-page="vyapari.html"] #main-nav a[href="vyapari.html"] span,
+html[data-page="easylender.html"] #main-nav a[href="easylender.html"] span {
+    color: #0f172a !important;
+}

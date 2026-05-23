@@ -42,9 +42,308 @@
 <body class="bg-white text-slate-800 overflow-x-hidden">
 
     <!-- HEADER -->
-    <div id="header-container"></div>
-    <script src="assets/js/components.js"></script>
-    <script>loadComponent("header-container", "nav-header.html");</script>
+    <nav id="main-nav"
+        class="fixed w-full z-50 top-4 md:top-6 px-4 md:px-6 pointer-events-auto transition-transform duration-500">
+        <script>
+            document.documentElement.setAttribute(
+                'data-page',
+                window.location.pathname.split("/").pop() || "index.html"
+            );
+        </script>
+
+        <div
+            class="relative max-w-6xl mx-auto glass rounded-[2rem] md:rounded-full px-5 py-3 md:px-8 md:py-4 flex justify-between items-center border border-slate-200 shadow-2xl">
+
+            <div class="md:hidden w-10"></div>
+
+            <a href="index.html"
+                class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center gap-3 group">
+                <img src="assets/img/pits_logo.png" alt="Pravasis IT Solutions Logo"
+                    class="h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105">
+            </a>
+
+            <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest items-center">
+                <a href="about.html" class="nav-link text-[#0f172a] hover:text-blue-400 transition-colors">About</a>
+
+                <div class="relative group">
+                    <a href="services.html"
+                        class="nav-link text-[#0f172a] hover:text-blue-400 transition-colors flex items-center gap-2">
+                        Services <i
+                            class="bi bi-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </a>
+
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                        <div
+                            class="bg-white w-[850px] max-w-[90vw] rounded-[2.5rem] border border-slate-200 p-8 shadow-2xl backdrop-blur-2xl">
+                            <div class="grid grid-cols-3 gap-4">
+                                <a href="website_dev.html"
+                                    class="flex items-center gap-4 p-3 rounded-2xl hover:bg-blue-50 transition-all group/item">
+                                    <div
+                                        class="w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all">
+                                        <i class="bi bi-window-sidebar"></i>
+                                    </div>
+                                    <span
+                                        class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">Website
+                                        Development</span>
+                                </a>
+                                <a href="sms_services.html"
+                                    class="flex items-center gap-4 p-3 rounded-2xl hover:bg-emerald-50 transition-all group/item">
+                                    <div
+                                        class="w-8 h-8 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover/item:bg-emerald-500 group-hover/item:text-white transition-all">
+                                        <i class="bi bi-chat-dots"></i>
+                                    </div>
+                                    <span
+                                        class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">Bulk
+                                        SMS Service</span>
+                                </a>
+                                <a href="custom_sw.html"
+                                    class="flex items-center gap-4 p-3 rounded-2xl hover:bg-purple-50 transition-all group/item">
+                                    <div
+                                        class="w-8 h-8 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover/item:bg-purple-500 group-hover/item:text-white transition-all">
+                                        <i class="bi bi-code-slash"></i>
+                                    </div>
+                                    <span
+                                        class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">Custom
+                                        Software</span>
+                                </a>
+                                <a href="whatsapp_api.html"
+                                    class="flex items-center gap-4 p-3 rounded-2xl hover:bg-green-50 transition-all group/item">
+                                    <div
+                                        class="w-8 h-8 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 group-hover/item:bg-green-500 group-hover/item:text-white transition-all">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </div>
+                                    <span
+                                        class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">WhatsApp
+                                        API</span>
+                                </a>
+                                <a href="support.html"
+                                    class="flex items-center gap-4 p-3 rounded-2xl hover:bg-orange-50 transition-all group/item">
+                                    <div
+                                        class="w-8 h-8 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 group-hover/item:bg-orange-500 group-hover/item:text-white transition-all">
+                                        <i class="bi bi-headset"></i>
+                                    </div>
+                                    <span
+                                        class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">Support
+                                        Calls</span>
+                                </a>
+                                <a href="digital_marketing.html"
+                                    class="flex items-center gap-4 p-3 rounded-2xl hover:bg-indigo-50 transition-all group/item">
+                                    <div
+                                        class="w-8 h-8 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover/item:bg-indigo-500 group-hover/item:text-white transition-all">
+                                        <i class="bi bi-megaphone"></i>
+                                    </div>
+                                    <span
+                                        class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">Digital
+                                        Marketing</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <a href="products.html"
+                        class="nav-link text-[#0f172a] hover:text-blue-400 transition-colors flex items-center gap-2">
+                        Products <i
+                            class="bi bi-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </a>
+
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+                        <div
+                            class="bg-white w-[900px] max-w-[90vw] rounded-[2.5rem] border border-slate-200 p-8 shadow-2xl backdrop-blur-2xl">
+                            <div class="grid grid-cols-3 gap-6">
+
+                                <a href="sahakarimis.html"
+                                    class="flex items-center gap-4 p-3.5 rounded-2xl hover:bg-blue-50 transition-all group/item">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all flex-shrink-0">
+                                        <i class="bi bi-display text-base"></i>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">Sahakari
+                                            MIS</span>
+                                        <span
+                                            class="text-[11px] font-medium text-slate-400 mt-0.5 tracking-wide uppercase">Co-operative
+                                            ERP Suite</span>
+                                    </div>
+                                </a>
+
+                                <a href="rioeasy.html"
+                                    class="flex items-center gap-4 p-3.5 rounded-2xl hover:bg-emerald-50 transition-all group/item">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover/item:bg-emerald-500 group-hover/item:text-white transition-all flex-shrink-0">
+                                        <i class="bi bi-phone-vibrate text-base"></i>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">RioEasyCollect</span>
+                                        <span
+                                            class="text-[11px] font-medium text-slate-400 mt-0.5 tracking-wide uppercase">Cash
+                                            Collection App</span>
+                                    </div>
+                                </a>
+
+                                <a href="mulla.html"
+                                    class="flex items-center gap-4 p-3.5 rounded-2xl hover:bg-purple-50 transition-all group/item">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-500 group-hover/item:bg-purple-500 group-hover/item:text-white transition-all flex-shrink-0">
+                                        <i class="bi bi-wallet2 text-base"></i>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">Muttathe
+                                            Mulla</span>
+                                        <span
+                                            class="text-[11px] font-medium text-slate-400 mt-0.5 tracking-wide uppercase">Micro-Loan
+                                            Tracker</span>
+                                    </div>
+                                </a>
+
+                                <a href="vyapari.html"
+                                    class="flex items-center gap-4 p-3.5 rounded-2xl hover:bg-cyan-50 transition-all group/item">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-500 group-hover/item:bg-cyan-500 group-hover/item:text-white transition-all flex-shrink-0">
+                                        <i class="bi bi-shop text-base"></i>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">Vyapari
+                                            Mithra</span>
+                                        <span
+                                            class="text-[11px] font-medium text-slate-400 mt-0.5 tracking-wide uppercase">Chit
+                                            Fund Software</span>
+                                    </div>
+                                </a>
+
+                                <a href="easylender.html"
+                                    class="flex items-center gap-4 p-3.5 rounded-2xl hover:bg-indigo-50 transition-all group/item">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-500 group-hover/item:bg-indigo-500 group-hover/item:text-white transition-all flex-shrink-0">
+                                        <i class="bi bi-bank text-base"></i>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="text-sm font-bold text-slate-800 group-hover/item:text-[#0f172a] transition-colors">Easy
+                                            Lender</span>
+                                        <span
+                                            class="text-[11px] font-medium text-slate-400 mt-0.5 tracking-wide uppercase">Money
+                                            Lending App</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="case_study.html" class="nav-link text-[#0f172a] hover:text-blue-400 transition-colors">Case
+                    Studies</a>
+            </div>
+
+            <div class="hidden sm:block">
+                <a href="contact.html"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-xs font-bold transition-all shadow-md"
+                    style="color: white !important;">
+                    Contact Us
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn"
+                onclick="document.getElementById('mobile-menu').classList.remove('hidden'); document.getElementById('mobile-menu').classList.add('flex'); setTimeout(() => document.getElementById('mobile-menu').classList.remove('translate-x-full'), 10);"
+                class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#0f172a] transition-all">
+                <i class="bi bi-list text-2xl leading-none"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[100] bg-white/95 backdrop-blur-2xl translate-x-full transition-transform duration-500 hidden flex-col md:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <a href="index.html">
+                    <img src="assets/img/pits_logo.png" alt="Pravasis IT Solutions Logo" class="h-10 w-auto">
+                </a>
+                <button id="close-menu-btn"
+                    onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); setTimeout(() => { document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('mobile-menu').classList.remove('flex'); }, 500);"
+                    class="text-[#0f172a] hover:text-red-500 transition-colors">
+                    <i class="bi bi-x-lg text-2xl"></i>
+                </button>
+            </div>
+
+            <nav class="flex flex-col space-y-6">
+                <a href="about.html"
+                    class="mobile-link text-2xl font-bold text-[#0f172a] hover:text-blue-400 transition-colors">About</a>
+                <a href="services.html"
+                    class="mobile-link text-2xl font-bold text-[#0f172a] hover:text-blue-400 transition-colors">Services</a>
+                <a href="products.html"
+                    class="mobile-link text-2xl font-bold text-[#0f172a] hover:text-blue-400 transition-colors">Products</a>
+                <a href="case_study.html"
+                    class="mobile-link text-2xl font-bold text-[#0f172a] hover:text-blue-400 transition-colors">Case
+                    Studies</a>
+                <a href="clients.html"
+                    class="mobile-link text-2xl font-bold text-[#0f172a] hover:text-blue-400 transition-colors">Clients</a>
+
+                <div class="pt-10">
+                    <a href="contact.html"
+                        class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-4 rounded-2xl text-base font-bold transition-all shadow-lg shadow-blue-600/20"
+                        style="color: white !important;">
+                        Contact Us
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('mobile-link')) {
+                const m = document.getElementById('mobile-menu');
+                m.classList.add('translate-x-full');
+                setTimeout(() => { m.classList.add('hidden'); m.classList.remove('flex'); }, 500);
+            }
+        });
+    </script>
+
+    <script>
+        (function () {
+            const nav = document.getElementById("main-nav");
+
+            if (!nav) return;
+
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            setTimeout(() => {
+                nav.style.transition = "transform 0.45s cubic-bezier(0.4,0,0.2,1)";
+            }, 100);
+
+            window.addEventListener("scroll", () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const currentScrollY = window.scrollY;
+
+                        if (currentScrollY > 80) {
+                            if (currentScrollY > lastScrollY) {
+                                nav.style.transform = "translateY(-180%)";
+                            } else {
+                                nav.style.transform = "translateY(0)";
+                            }
+                        } else {
+                            nav.style.transform = "translateY(0)";
+                        }
+
+                        lastScrollY = currentScrollY;
+                        ticking = false;
+                    });
+
+                    ticking = true;
+                }
+            }, { passive: true });
+        })();
+    </script>
 
     <main>
 
@@ -85,6 +384,11 @@
                             class="text-blue-600">App</span>
 
                     </h1>
+
+                    <p class="mt-6 text-base md:text-lg text-slate-500 leading-relaxed font-medium">
+                        RioEasy Collect helps teams track payments, manage follow-ups, and improve collection efficiency
+                        in real time.
+                    </p>
 
 
                     <!-- Buttons -->
@@ -460,7 +764,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script src="assets/js/components.js"></script>
+    <script src="assets/js/components.js?v=3.0"></script>
 
     <script>
         AOS.init({
