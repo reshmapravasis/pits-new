@@ -29,6 +29,8 @@
 <body class=" text-[#0f172a] overflow-x-hidden">
 
     <div id="header-container"></div>
+    <script src="assets/js/components.js"></script>
+    <script>loadComponent("header-container", "nav-header.html");</script>
 
     <main class="relative z-10">
 
@@ -265,7 +267,6 @@
 
     <script>
         AOS.init({ duration: 1000, once: true });
-        loadComponent("header-container", "nav-header.html");
         loadComponent("footer-container", "footer.html");
     </script>
 </body>

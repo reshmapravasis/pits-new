@@ -41,12 +41,14 @@
 
     <!-- HEADER -->
     <div id="header-container"></div>
+    <script src="assets/js/components.js"></script>
+    <script>loadComponent("header-container", "nav-header.html");</script>
 
     <main>
 
         <!-- HERO SECTION -->
         <!-- HERO SECTION -->
-        <section class="relative overflow-hidden pt-32 lg:pt-40 pb-20 px-6 bg-slate-50">
+        <section class="relative overflow-hidden pt-32 lg:pt-40 pb-20 px-6 bg-slate-50 min-h-[100vh] flex items-center">
 
             <!-- Subtle Background Tech Grid Pattern -->
             <div class="absolute inset-0 opacity-[0.03]"
@@ -61,10 +63,10 @@
                 class="absolute -right-20 -bottom-20 w-80 h-80 bg-indigo-400/10 rounded-full blur-[120px] pointer-events-none">
             </div>
 
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="max-w-[90rem] mx-auto grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10 w-full">
 
                 <!-- LEFT SIDE: Content -->
-                <div>
+                <div class="lg:col-span-6 pr-4 lg:pr-8">
                     <!-- Badge -->
                     <div
                         class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
@@ -93,7 +95,7 @@
                 </div>
 
                 <!-- RIGHT SIDE: Video Box -->
-                <div class="relative lg:mt-8">
+                <div class="relative lg:col-span-6 lg:mt-0">
                     <div
                         class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2rem] blur opacity-20">
                     </div>
@@ -102,11 +104,11 @@
                         class="relative bg-white p-2 rounded-[2rem] shadow-2xl border border-slate-100 overflow-hidden">
 
                         <div class="relative w-full aspect-video rounded-[1.8rem] overflow-hidden">
-                            <!-- <iframe
+                            <iframe
                                 src="https://player.vimeo.com/video/1194652931?title=0&byline=0&portrait=0&badge=0&autopause=0"
                                 class="absolute top-0 left-0 w-full h-full rounded-[1.8rem]" frameborder="0"
                                 allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
-                            </iframe> -->
+                            </iframe>
                         </div>
 
                     </div>
@@ -427,7 +429,6 @@
             once: true
         });
 
-        loadComponent("header-container", "nav-header.html");
         loadComponent("footer-container", "footer.html");
 
         function sendWhatsAppMessage() {

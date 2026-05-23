@@ -29,111 +29,263 @@
     <link rel="apple-touch-icon" href="assets/img/pits_logo.png">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/components.js"></script>
+
+    <style>
+        #whatsapp-contact {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body class=" text-[#0f172a] overflow-x-hidden ">
     <div id="header-container"></div>
+    <script src="assets/js/components.js"></script>
+    <script>loadComponent("header-container", "nav-header.html");</script>
 
     <main>
 
 
 
-        <!-- Hero Section -->
-        <section class="pt-32 md:pt-48 pb-24 px-6 relative">
-            <div class="max-w-6xl mx-auto text-center">
-                <div class="inline-block glass px-6 py-2 rounded-full border border-slate-200 mb-8"
-                    data-aos="fade-down">
-                    <span class="text-blue-400 font-bold tracking-widest text-xs uppercase">Growth & Visibility</span>
+        <!-- HERO SECTION -->
+        <section class="relative pt-36 md:pt-44 pb-24 px-6 overflow-hidden min-h-[100vh] flex items-center">
+            <!-- Background Glow -->
+            <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-100 rounded-full blur-[120px] opacity-60">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-100 rounded-full blur-[120px] opacity-60">
+            </div>
+
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+                <!-- Left Content -->
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-50 border border-blue-100 mb-8">
+                        <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                        <span class="text-sm font-semibold text-blue-700 tracking-wide uppercase">Growth &
+                            Visibility</span>
+                    </div>
+
+                    <h1 class="text-3xl md:text-4xl lg:text-[2.5rem] font-extrabold leading-tight text-slate-900 mb-6">
+                        Digital <span class="text-yellow-600">Marketing</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-600 leading-relaxed mb-10 max-w-2xl">
+                        Elevate your institution's digital presence. We specialize in performance-driven marketing
+                        tailored for cooperative societies, banks, and growing enterprises.
+                    </p>
+
+                    <div class="flex flex-wrap gap-5">
+                        <!-- WhatsApp Contact Button -->
+                        <button onclick="sendWhatsAppMessage()"
+                            class="flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-green-500/20 active:scale-[0.98]">
+                            <i class="bi bi-whatsapp"></i> Request for Demo
+                        </button>
+                        <a href="services.html"
+                            class="border border-slate-300 hover:border-green-600 hover:text-green-600 px-8 py-4 rounded-full font-semibold transition-all">
+                            Explore Services
+                        </a>
+                    </div>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-[#0f172a] mb-8 leading-tight" data-aos="fade-up">
-                    Digital <span class="text-gradient">Marketing</span>
-                </h1>
-                <p class="text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up"
-                    data-aos-delay="100">
-                    Elevate your institution's digital presence. We specialize in performance-driven marketing
-                    tailored for cooperative societies, banks, and growing enterprises.
-                </p>
+
+                <!-- Right Visual -->
+                <div class="relative">
+                    <div
+                        class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[40px] p-10 shadow-2xl overflow-hidden relative h-full min-h-[450px] flex items-center justify-center border border-slate-700/50">
+
+                        <!-- Floating Stat Card 1 -->
+                        <div
+                            class="absolute top-10 md:top-16 left-6 md:left-10 bg-white rounded-3xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex items-center gap-4 animate-[bounce_3s_infinite] z-20">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 text-xl">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Traffic</p>
+                                <h4 class="font-extrabold text-slate-900 text-lg">+150% Growth</h4>
+                            </div>
+                        </div>
+
+                        <!-- Floating Stat Card 2 -->
+                        <div class="absolute bottom-6 md:bottom-10 right-2 md:right-6 bg-white rounded-3xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex items-center gap-4 animate-[bounce_4s_infinite] z-20"
+                            style="animation-delay: 1s;">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-xl">
+                                <i class="bi bi-bullseye"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Leads</p>
+                                <h4 class="font-extrabold text-slate-900 text-lg">High Conversion</h4>
+                            </div>
+                        </div>
+
+                        <!-- Center Element -->
+                        <div class="relative z-10 text-center -translate-y-6">
+                            <div
+                                class="w-28 h-28 bg-gradient-to-tr from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white text-5xl mx-auto shadow-[0_0_60px_rgba(234,179,8,0.6)] mb-5 relative">
+                                <i class="bi bi-rocket-takeoff translate-y-1 translate-x-1"></i>
+                                <!-- Ping effect -->
+                                <div class="absolute inset-0 rounded-full border-4 border-yellow-400/40 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+                                <div class="absolute inset-0 rounded-full border-4 border-orange-500/30 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+                            </div>
+                            <h3 class="text-white text-2xl font-black tracking-tight">Digital Domination</h3>
+                            <p class="text-yellow-100 text-sm mt-2 font-medium tracking-wide">Data-Driven Results</p>
+                        </div>
+
+                        <!-- Decorative blur -->
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-yellow-500/20 rounded-full blur-[100px] z-0">
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
 
 
 
         <!-- Marketing Pillars -->
-        <section class="py-24 px-6 relative overflow-hidden">
-            <div class="max-w-6xl mx-auto">
-                <!-- <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-4xl md:text-6xl font-extrabold text-[#0f172a] tracking-tight mb-6">Our <span
-                            class="text-blue-500">Pillars</span></h2>
-                    <p class="text-content-small max-w-2xl mx-auto">Four core areas where we help financial
-                        institutions dominate the digital landscape.</p>
-                </div> -->
+        <section class="py-24 px-6 relative bg-slate-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">
+                        Our Pillars
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mt-5 mb-6 text-slate-900">
+                        Four Core Areas We Help You Dominate
+                    </h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        We execute a comprehensive strategy designed to maximize your institution's digital growth at
+                        every stage of the customer journey.
+                    </p>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Pillar 1 -->
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-blue-500/50 transition-all duration-500 group"
-                        data-aos="fade-up" data-aos-delay="100">
+                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="0">
                         <div
-                            class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="bi bi-megaphone"></i>
+                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            <!-- Front -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 text-blue-600 text-3xl">
+                                    <i class="bi bi-megaphone"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Awareness</h3>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-blue-600 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-4">Awareness</h3>
+                                <p class="text-blue-50 leading-relaxed">
+                                    Increasing your institution's visibility through high-quality visual content and
+                                    local SEO optimization.
+                                </p>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-[#0f172a] mb-3">Awareness</h3>
-                        <p class="text-base text-slate-500 leading-relaxed">Increasing your institution's visibility
-                            through high-quality visual content and local SEO optimization.</p>
                     </div>
 
                     <!-- Pillar 2 -->
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-emerald-500/50 transition-all duration-500 group"
-                        data-aos="fade-up" data-aos-delay="200">
+                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="100">
                         <div
-                            class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="bi bi-people"></i>
+                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            <!-- Front -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6 text-emerald-600 text-3xl">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Engagement</h3>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-emerald-600 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-4">Engagement</h3>
+                                <p class="text-emerald-50 leading-relaxed">
+                                    Fostering trust by engaging with members on platforms they use every day like
+                                    Facebook and WhatsApp.
+                                </p>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-[#0f172a] mb-3">Engagement</h3>
-                        <p class="text-base text-slate-500 leading-relaxed">Fostering trust by engaging with members on
-                            platforms they use every day like Facebook and WhatsApp.</p>
                     </div>
 
                     <!-- Pillar 3 -->
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-purple-500/50 transition-all duration-500 group"
-                        data-aos="fade-up" data-aos-delay="300">
+                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="200">
                         <div
-                            class="w-20 h-20 bg-purple-50 rounded-full flex items-center justify-center text-purple-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="bi bi-graph-up-arrow"></i>
+                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            <!-- Front -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 text-purple-600 text-3xl">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Conversion</h3>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-purple-600 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-4">Conversion</h3>
+                                <p class="text-purple-50 leading-relaxed">
+                                    Turning digital interest into tangible growth, from new account openings to loan
+                                    applications.
+                                </p>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-[#0f172a] mb-3">Conversion</h3>
-                        <p class="text-base text-slate-500 leading-relaxed">Turning digital interest into tangible
-                            growth,
-                            from new account openings to loan applications.</p>
                     </div>
 
                     <!-- Pillar 4 -->
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-red-500/50 transition-all duration-500 group"
-                        data-aos="fade-up" data-aos-delay="400">
+                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="300">
                         <div
-                            class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center text-red-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="bi bi-shield-check"></i>
+                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            <!-- Front -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 text-orange-500 text-3xl">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Retention</h3>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-orange-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-4">Retention</h3>
+                                <p class="text-orange-50 leading-relaxed">
+                                    Automated notification systems and educational content to keep your members loyal
+                                    and informed.
+                                </p>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-[#0f172a] mb-3">Retention</h3>
-                        <p class="text-base text-slate-500 leading-relaxed">Automated notification systems and
-                            educational
-                            content to keep your members loyal and informed.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA -->
-        <section class="py-24 px-6 relative">
-            <div
-                class="max-w-4xl mx-auto glass p-12 md:p-20 rounded-[3.5rem] border border-slate-200 text-center relative overflow-hidden">
-                <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-100 rounded-full blur-[100px]"></div>
-                <h2 class="text-4xl md:text-6xl font-extrabold text-[#0f172a] tracking-tight mb-8">Ready to Grow Your
-                    Brand?</h2>
+        <section class="py-24 px-6 relative overflow-hidden">
+
+            <div class="absolute inset-0 bg-gradient-to-r from-yellow-600 to-blue-400"></div>
+
+            <div class="max-w-5xl mx-auto text-center relative z-10 text-white">
+
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
+                    Ready to Dominate the Digital Space?
+                </h2>
+
+                <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-12">
+                    Whether you are building brand awareness or looking to boost your conversions, our targeted digital
+                    marketing strategies will help you reach the right audience and accelerate your growth.
+                </p>
+
                 <a href="contact.html"
-                    class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-full font-bold transition-all shadow-lg shadow-blue-600/20">
+                    class="inline-block bg-white text-blue-700 hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition-all shadow-2xl">
                     Get a Free Strategy Call
                 </a>
+
             </div>
+
         </section>
     </main>
 
@@ -142,7 +294,6 @@
 
     <script>
         AOS.init({ duration: 1000, once: true });
-        loadComponent("header-container", "nav-header.html");
         loadComponent("footer-container", "footer.html");
 
 

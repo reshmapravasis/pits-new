@@ -29,70 +29,269 @@
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/components.js"></script>
+
+    <style>
+        #whatsapp-contact {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body class=" text-[#0f172a] overflow-x-hidden ">
     <div id="header-container"></div>
+    <script src="assets/js/components.js"></script>
+    <script>loadComponent("header-container", "nav-header.html");</script>
 
     <main>
 
-        <div class="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-blue-500/10 blur-[150px] animate-pulse"
-            style="animation-delay: 2s;"></div>
-        </div>
+        <!-- HERO SECTION -->
+        <section class="relative pt-36 md:pt-44 pb-24 px-6 overflow-hidden min-h-[100vh] flex items-center">
+            <!-- Background Glow -->
+            <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full blur-[120px] opacity-60">
+            </div>
+            <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-100 rounded-full blur-[120px] opacity-60">
+            </div>
 
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+                <!-- Left Content -->
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-purple-50 border border-purple-100 mb-8">
+                        <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                        <span class="text-sm font-semibold text-purple-700 tracking-wide uppercase">Bespoke
+                            Technology</span>
+                    </div>
 
-        <!-- Hero Section -->
-        <section class="pt-32 md:pt-48 pb-24 px-6 relative">
-            <div class="max-w-6xl mx-auto text-center">
-                <div class="inline-block glass px-6 py-2 rounded-full border border-slate-200 mb-8"
-                    data-aos="fade-down">
-                    <span class="text-purple-400 font-bold tracking-widest text-xs uppercase">Bespoke Technology</span>
+                    <h1 class="text-3xl md:text-4xl lg:text-[2.5rem] font-extrabold leading-tight text-slate-900 mb-6">
+                        Tailored <span class="text-purple-600">Software Excellence</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-600 leading-relaxed mb-10 max-w-2xl">
+                        One size doesn't fit all. We engineer custom software solutions that perfectly align with your
+                        business objectives, ensuring efficiency and competitive advantage.
+                    </p>
+
+                    <div class="flex flex-wrap gap-5">
+                        <!-- WhatsApp Contact Button -->
+                        <button onclick="sendWhatsAppMessage()"
+                            class="flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-green-500/20 active:scale-[0.98]">
+                            <i class="bi bi-whatsapp"></i> Request for Demo
+                        </button>
+                        <a href="services.html"
+                            class="border border-slate-300 hover:border-green-600 hover:text-green-600 px-8 py-4 rounded-full font-semibold transition-all">
+                            Explore Services
+                        </a>
+                    </div>
                 </div>
-                <h1 class="text-3xl md:text-4xl lg:text-[2.5rem] font-extrabold text-[#0f172a] mb-8 leading-tight" data-aos="fade-up">
-                    Tailored <span class="text-gradient-purple">Software Excellence</span>
-                </h1>
-                <p class="text-content-small max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-                    One size doesn't fit all. We engineer custom software solutions that perfectly align with your
-                    business objectives, ensuring efficiency and competitive advantage.
-                </p>
+
+                <!-- Right Visual -->
+                <div class="relative">
+                    <div
+                        class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[40px] p-8 shadow-2xl overflow-hidden relative h-full min-h-[450px] flex items-center justify-center border border-slate-700/50">
+
+                        <!-- Code Editor Mockup -->
+                        <div class="w-full max-w-sm bg-[#1e1e2e] rounded-2xl shadow-2xl overflow-hidden relative z-10 border border-slate-700/50 font-mono text-[13px]"
+                            data-aos="zoom-in" data-aos-delay="100">
+
+                            <!-- Editor Header -->
+                            <div
+                                class="bg-[#181825] px-4 py-3 flex items-center justify-between border-b border-slate-700/50">
+                                <div class="flex gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-[#f38ba8]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#f9e2af]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#a6e3a1]"></div>
+                                </div>
+                                <div class="text-[#a6adc8] text-xs font-semibold tracking-wider">system.js</div>
+                                <div></div>
+                            </div>
+
+                            <!-- Editor Body -->
+                            <div class="p-5 text-[#cdd6f4] leading-relaxed overflow-hidden">
+                                <div data-aos="fade-right" data-aos-delay="200">
+                                    <p><span class="text-[#cba6f7]">import</span> { <span
+                                            class="text-[#89b4fa]">PITS</span> } <span
+                                            class="text-[#cba6f7]">from</span> <span
+                                            class="text-[#a6e3a1]">'@pits/core'</span>;</p>
+                                </div>
+                                <br>
+                                <div data-aos="fade-right" data-aos-delay="400">
+                                    <p><span class="text-[#cba6f7]">const</span> <span
+                                            class="text-[#89dceb]">customSoftware</span> = <span
+                                            class="text-[#cba6f7]">new</span> <span
+                                            class="text-[#f9e2af]">PITS.App</span>({</p>
+                                    <p class="pl-4"><span class="text-[#89b4fa]">name</span>: <span
+                                            class="text-[#a6e3a1]">'Enterprise System'</span>,</p>
+                                </div>
+                                <div data-aos="fade-right" data-aos-delay="600">
+                                    <p class="pl-4"><span class="text-[#89b4fa]">performance</span>: <span
+                                            class="text-[#fab387]">true</span>,</p>
+                                    <p class="pl-4"><span class="text-[#89b4fa]">security</span>: <span
+                                            class="text-[#a6e3a1]">'Military-Grade'</span>,</p>
+                                </div>
+                                <div data-aos="fade-right" data-aos-delay="800">
+                                    <p class="pl-4"><span class="text-[#89b4fa]">features</span>: [</p>
+                                    <p class="pl-8"><span class="text-[#a6e3a1]">'Modular'</span>, <span
+                                            class="text-[#a6e3a1]">'Scalable'</span>, <span
+                                            class="text-[#a6e3a1]">'Robust'</span></p>
+                                    <p class="pl-4">]</p>
+                                    <p>});</p>
+                                </div>
+                                <br>
+                                <div data-aos="fade-right" data-aos-delay="1000">
+                                    <p><span class="text-[#89dceb]">customSoftware</span>.<span
+                                            class="text-[#89b4fa]">deploy</span>().<span
+                                            class="text-[#89b4fa]">then</span>(() <span class="text-[#cba6f7]">=></span>
+                                        {</p>
+                                    <p class="pl-4"><span class="text-[#f38ba8]">console</span>.<span
+                                            class="text-[#89b4fa]">log</span>(<span class="text-[#a6e3a1]">'System Live!
+                                            🚀'</span>);</p>
+                                    <p>});</p>
+                                </div>
+
+                                <!-- Blinking cursor -->
+                                <span
+                                    class="inline-block w-2 h-4 bg-[#cdd6f4] animate-pulse align-middle ml-1 mt-2"></span>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Elements -->
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-purple-500/20 rounded-full blur-[90px] z-0">
+                        </div>
+
+                        <!-- Floating Tech Stack Badges -->
+                        <div
+                            class="absolute right-4 md:right-6 top-1/4 bg-white rounded-2xl p-4 shadow-xl z-20 flex items-center gap-3 animate-[bounce_4s_infinite]">
+                            <div
+                                class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                                <i class="bi bi-gear-fill text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Workflow</p>
+                                <p class="font-bold text-slate-800 text-sm">Automated</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Features Grid -->
-        <section class="py-24 px-6 relative">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-purple-500/50 transition-all duration-500"
-                        data-aos="fade-up">
+        <section class="py-24 px-6 relative bg-slate-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span class="text-purple-600 font-bold uppercase tracking-widest text-sm">
+                        Software Capabilities
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-6 tracking-tight">
+                        Engineered for Excellence
+                    </h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        We deliver high-performance, scalable, and secure software applications tailored to fit your
+                        unique operational workflows.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Pillar 1 -->
+                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="0">
                         <div
-                            class="w-20 h-20 bg-purple-50 rounded-full flex items-center justify-center text-purple-500 text-2xl mb-6">
-                            <i class="bi bi-puzzle"></i>
+                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            <!-- Front -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 text-purple-500 text-3xl">
+                                    <i class="bi bi-puzzle"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Modular Design</h3>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-purple-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-4">Modular Design</h3>
+                                <p class="text-purple-50 leading-relaxed">
+                                    Scalable architecture that grows with your business, allowing for easy updates and
+                                    new feature integration over time.
+                                </p>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-[#0f172a] mb-4">Modular Design</h3>
-                        <p class="text-slate-500 leading-relaxed">Scalable architecture that grows with your business,
-                            allowing for easy updates and new feature integration.</p>
                     </div>
 
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-blue-500/50 transition-all duration-500"
-                        data-aos="fade-up" data-aos-delay="100">
+                    <!-- Pillar 2 -->
+                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="100">
                         <div
-                            class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mb-6">
-                            <i class="bi bi-cpu-fill"></i>
+                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            <!-- Front -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 text-blue-500 text-3xl">
+                                    <i class="bi bi-cpu-fill"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Core Integration</h3>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-blue-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-4">Core Integration</h3>
+                                <p class="text-blue-50 leading-relaxed">
+                                    Seamlessly connect with your existing databases, third-party APIs, and legacy
+                                    systems to ensure operational continuity.
+                                </p>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-[#0f172a] mb-4">Core Integration</h3>
-                        <p class="text-slate-500 leading-relaxed">Seamlessly connect with your existing databases,
-                            third-party APIs, and legacy systems.</p>
                     </div>
 
-                    <div class="card-ultra-rounded text-center flex flex-col items-center justify-center border border-slate-200 hover:border-emerald-500/50 transition-all duration-500"
-                        data-aos="fade-up" data-aos-delay="200">
+                    <!-- Pillar 3 -->
+                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="200">
                         <div
-                            class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 text-2xl mb-6">
-                            <i class="bi bi-shield-check"></i>
+                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            <!-- Front -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6 text-emerald-500 text-3xl">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Secure & Robust</h3>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-emerald-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-4">Secure & Robust</h3>
+                                <p class="text-emerald-50 leading-relaxed">
+                                    Enterprise-level security protocols built into every line of code to protect your
+                                    business logic, operations, and sensitive data.
+                                </p>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-[#0f172a] mb-4">Secure & Robust</h3>
-                        <p class="text-slate-500 leading-relaxed">Enterprise-level security protocols built into every
-                            line of code to protect your business logic and data.</p>
+                    </div>
+
+                    <!-- Pillar4  -->
+                    <div class="group h-[320px] w-full [perspective:1000px]" data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            <!-- Front -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-3xl p-8 flex flex-col items-center justify-center border border-slate-100 shadow-sm text-center">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 text-orange-500 text-3xl">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-slate-900">Customizable & Integrated</h3>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-orange-500 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-4">Customizable & Integrated</h3>
+                                <p class="text-orange-50 leading-relaxed">
+                                    Flexible WhatsApp API solutions designed to seamlessly fit your custom business
+                                    software and workflow.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,17 +299,25 @@
 
         <!-- CTA Section -->
         <section class="py-24 px-6 relative overflow-hidden">
-            <div
-                class="max-w-4xl mx-auto glass p-12 md:p-20 rounded-[3.5rem] border border-slate-200 text-center relative">
-                <div class="absolute -top-24 -right-24 w-64 h-64 bg-purple-100 rounded-full blur-[100px]"></div>
-                <h2 class="text-4xl md:text-6xl font-extrabold text-[#0f172a] tracking-tight mb-8">Build Your Vision
+
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500"></div>
+
+            <div class="max-w-5xl mx-auto text-center relative z-10 text-white">
+
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
+                    Ready to Build Your Vision?
                 </h2>
-                <p class="text-content-small mb-12">Let's discuss how our custom software can transform your
-                    operational efficiency.</p>
+
+                <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-12">
+                    Let's discuss how our custom software can transform your operational efficiency and drive
+                    exponential business growth.
+                </p>
+
                 <a href="contact.html"
-                    class="inline-block bg-purple-600 hover:bg-purple-500 text-[#0f172a] px-10 py-4 rounded-full font-bold transition-all shadow-lg shadow-purple-600/20">
+                    class="inline-block bg-white text-purple-700 hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition-all shadow-2xl">
                     Schedule a Consultation
                 </a>
+
             </div>
         </section>
     </main>
@@ -120,7 +327,6 @@
 
     <script>
         AOS.init({ duration: 1000, once: true });
-        loadComponent("header-container", "nav-header.html");
         loadComponent("footer-container", "footer.html");
 
 

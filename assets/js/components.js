@@ -5,39 +5,55 @@
  */
 
 function loadComponent(id, file) {
-    console.log(`Attempting to load component: ${file} into ${id}`);
-    fetch(file)
-        .then(response => {
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            return response.text();
-        })
-        .then(data => {
-            const container = document.getElementById(id);
-            if (!container) {
-                console.error(`Container with ID ${id} not found.`);
-                return;
-            }
-            container.innerHTML = data;
-            
-            // Re-execute script tags within the injected HTML
-            const scripts = container.querySelectorAll("script");
-            scripts.forEach(oldScript => {
-                const newScript = document.createElement("script");
-                Array.from(oldScript.attributes).forEach(attr => {
-                    newScript.setAttribute(attr.name, attr.value);
-                });
-                newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-                oldScript.parentNode.replaceChild(newScript, oldScript);
-            });
+    // console.log(`Attempting to load component: ${file} into ${id}`);
+    const container = document.getElementById(id);
+    if (!container) {
+        console.error(`Container with ID ${id} not found.`);
+        return;
+    }
 
-            // Initialize active state highlighting
-            highlightActiveLink();
-            
-            console.log(`Successfully loaded: ${file}`);
-        })
-        .catch(err => {
-            console.error(`Error loading component ${file}:`, err);
+    // Use session storage to cache the HTML and inject instantly
+    const cacheKey = `pits_component_${file}`;
+    const cachedData = sessionStorage.getItem(cacheKey);
+
+    if (cachedData) {
+        // Inject immediately if cached
+        injectComponentData(container, cachedData, file);
+    } else {
+        // Fetch if not cached
+        fetch(file)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+            })
+            .then(data => {
+                sessionStorage.setItem(cacheKey, data);
+                injectComponentData(container, data, file);
+            })
+            .catch(err => {
+                console.error(`Error loading component ${file}:`, err);
+            });
+    }
+}
+
+function injectComponentData(container, data, file) {
+    container.innerHTML = data;
+    
+    // Re-execute script tags within the injected HTML
+    const scripts = container.querySelectorAll("script");
+    scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        Array.from(oldScript.attributes).forEach(attr => {
+            newScript.setAttribute(attr.name, attr.value);
         });
+        newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+
+    // Initialize active state highlighting
+    highlightActiveLink();
+    
+    // console.log(`Successfully loaded: ${file}`);
 }
 
 function highlightActiveLink() {

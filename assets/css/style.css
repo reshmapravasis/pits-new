@@ -434,3 +434,66 @@ h3 {
         zoom: 0.75;
     }
 } */
+
+
+/* ==========================================================================
+   STRICT OVERRIDES FOR NAV HEADER TYPOGRAPHY (TARGETING UTILITY CLASSES)
+   ========================================================================== */
+
+/* 1. Force Main Top Level Links (Overriding inline .text-sm) */
+#main-nav .nav-link,
+#main-nav div.hidden.md\:flex.text-sm a {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9375rem !important;
+    /* Bumps top level links cleanly up to 15px */
+    font-weight: 700 !important;
+    /* Sharp bold display */
+    letter-spacing: 0.12em !important;
+    /* Elegant spacing over the tracking-widest block */
+    text-transform: uppercase !important;
+}
+
+/* 2. Force Contact Us Button Text Size (Overriding inline .text-xs) */
+#main-nav a[href="contact.html"].text-xs,
+#main-nav div.hidden.sm\:block a.bg-blue-600 {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9375rem !important;
+    /* Matches top menu layout scaling perfectly at 15px */
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+/* 3. Dropdown Service/Product Item Titles (As confirmed working beautifully in your second image) */
+#main-nav .group\/item span.text-xs,
+#main-nav .group\/item span.font-semibold,
+#main-nav .group\/item span.whitespace-nowrap {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9375rem !important;
+    /* Sharp, clear 15px titles */
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+    text-transform: none !important;
+    display: inline-block !important;
+    line-height: 1.2 !important;
+}
+
+/* 4. Dropdown Service/Product Item Subtitles */
+#main-nav .group\/item span.text-\[10px\] {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.6875rem !important;
+    /* Clear 11px subtitle tags */
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    margin-top: 0.25rem !important;
+    display: inline-block !important;
+}
+
+/* 5. Subtitle Hover Colors */
+#main-nav .group\/item:hover span.text-\[10px\] {
+    color: #334155 !important;
+}

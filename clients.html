@@ -35,6 +35,8 @@
 <body class=" text-[#0f172a] overflow-x-hidden">
 
     <div id="header-container"></div>
+    <script src="assets/js/components.js"></script>
+    <script>loadComponent("header-container", "nav-header.html");</script>
 
 
 
@@ -94,7 +96,6 @@
 
         AOS.init({ duration: 1000, once: true });
         console.log("Initializing components...");
-        loadComponent("header-container", "nav-header.html");
         loadComponent("footer-container", "footer.html");
 
         // Initialize Tilt if needed (though data-tilt handles it automatically, this is safer for dynamic content)
